@@ -2,70 +2,200 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Unité 2 | EduTech</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cours d'informatique : échange d'informations via un réseau local, niveau 2AC.">
+<title>Unité 2 — Échange d’informations via un réseau local | IDTech</title>
 <style>
-body{margin:0;font-family:Arial;background:#f4f7ff;color:#1e293b}
-nav{background:#172554;padding:16px;display:flex;flex-wrap:wrap;gap:15px}
-nav a{color:white;text-decoration:none}
-main{max-width:900px;margin:auto;padding:20px}
-.card{background:white;padding:22px;border-radius:14px;margin:18px 0;box-shadow:0 4px 15px #0001}
-h1,h2{color:#4338ca}
-li{line-height:1.9}
-button{background:#4f46e5;color:white;border:0;padding:12px;border-radius:8px;cursor:pointer}
-label{display:block;padding:10px;margin:8px 0;background:#f1f5f9;border-radius:8px}
+:root{--blue:#1457a6;--blue2:#eaf4ff;--green:#16845b;--green2:#e9f8f0;--orange:#b85b0a;--orange2:#fff3df;--purple:#7047a3;--purple2:#f3edff;--ink:#172b45;--muted:#52657c;--line:#d7e2ef;--bg:#f4f7fb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+header{background:linear-gradient(130deg,#103d7b,#1976c9);color:white;padding:34px 18px;text-align:center}
+header .tag{display:inline-block;background:#ffffff22;border:1px solid #ffffff55;padding:5px 12px;border-radius:20px;font-size:.9rem}
+header h1{font-size:clamp(1.6rem,4vw,2.5rem);line-height:1.25;margin:14px 0 8px}header p{margin:0;color:#e5f2ff}
+main{max-width:1000px;margin:24px auto;padding:0 15px 45px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}nav a{background:white;border:1px solid var(--line);padding:7px 12px;border-radius:9px;color:var(--blue);text-decoration:none;font-size:.92rem}nav a:hover{background:var(--blue2)}
+section{background:white;border:1px solid var(--line);border-radius:16px;padding:clamp(17px,3vw,28px);margin:18px 0;box-shadow:0 5px 18px #193b6010}
+h2{font-size:1.4rem;margin:0 0 14px;color:var(--blue);border-bottom:2px solid var(--blue2);padding-bottom:8px}h3{font-size:1.08rem;margin:14px 0 5px}
+.callout{padding:13px 15px;border-radius:11px;background:var(--blue2);border-left:5px solid var(--blue);margin:12px 0}
+.note{background:var(--orange2);border-left-color:var(--orange)}.success{background:var(--green2);border-left-color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:13px}.card{border:1px solid var(--line);border-radius:12px;padding:15px;background:#fff}.card .emoji{font-size:2.2rem;display:block}.card h3{margin:5px 0;color:var(--blue)}
+.diagram{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:16px;background:#f8fbff;border:1px dashed #9bbde4;border-radius:12px;margin:15px 0}.device{min-width:125px;text-align:center;background:white;border:2px solid #9fc5ed;border-radius:12px;padding:12px 9px;font-weight:bold}.device span{display:block;font-size:2rem}.arrow{font-size:1.7rem;color:var(--blue);font-weight:bold}
+.steps{counter-reset:step;list-style:none;padding:0}.steps li{counter-increment:step;position:relative;padding:10px 12px 10px 52px;margin:9px 0;background:#f7faff;border-radius:10px}.steps li:before{content:counter(step);position:absolute;left:12px;top:10px;background:var(--blue);color:white;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;font-weight:bold}
+table{width:100%;border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{background:var(--blue2);color:#174b88}
+.exercise{border:1px solid var(--line);border-radius:12px;padding:15px;margin:14px 0}.question{margin:12px 0}.question label{display:block;margin:6px 0;cursor:pointer}.question input{margin-right:7px}.result{font-weight:bold;margin-top:10px}.answers{display:none;background:var(--green2);border-radius:10px;padding:14px;margin-top:12px}.answers.show{display:block}
+button{border:0;border-radius:10px;padding:11px 16px;background:var(--blue);color:white;font-size:1rem;font-weight:bold;cursor:pointer;margin:6px 5px 0 0}button:hover{filter:brightness(.93)}button.secondary{background:#52657c}
+footer{text-align:center;color:var(--muted);padding:20px}
+@media(max-width:600px){header{padding:27px 14px}section{padding:16px}table{font-size:.9rem}.diagram{gap:5px}.device{min-width:100px}.arrow{font-size:1.2rem}}
+@media print{body{background:white}nav,button{display:none}section{box-shadow:none;break-inside:avoid}header{background:#1457a6!important;print-color-adjust:exact}}
 </style>
 </head>
 <body>
-<nav>
-<a href="index.html">🏠 Accueil</a>
-<a href="unite1.html">Unité 1</a>
-<a href="unite2.html">Unité 2</a>
-<a href="unite3.html">Unité 3</a>
-<a href="unite4.html">Unité 4</a>
-</nav>
+<header>
+  <span class="tag">IDTech • Informatique • 2AC</span>
+  <h1>Unité 2 : Échange d’informations via un réseau local</h1>
+  <p>Un cours simple, illustré et accompagné d’exercices corrigés</p>
+</header>
 <main>
-<h1>Unité 2 : Échange d’informations via réseau local</h1>
-<p>Deuxième année du collège — Informatique</p>
-<section class="card">
-<h2>Leçon 1 : Le réseau local</h2>
-<p>Un réseau local (LAN) relie plusieurs appareils dans une zone limitée, par exemple une salle informatique.</p>
-<ul>
-<li>Partager des fichiers.</li>
-<li>Partager une imprimante.</li>
-<li>Échanger des informations entre ordinateurs.</li>
-</ul>
+<nav aria-label="Sommaire">
+  <a href="#definition">1. Définition</a><a href="#composants">2. Composants</a><a href="#types">3. Types de réseaux</a><a href="#echange">4. Échange</a><a href="#partage">5. Partage</a><a href="#securite">6. Sécurité</a><a href="#exercices">7. Exercices</a>
+</nav>
+
+<section id="definition">
+<h2>1. Qu’est-ce qu’un réseau local ?</h2>
+<p>Un <strong>réseau local</strong>, appelé aussi <strong>LAN</strong> (<em>Local Area Network</em>), est un ensemble d’ordinateurs et d’autres appareils reliés entre eux dans un espace limité : une maison, une salle informatique ou un établissement scolaire.</p>
+<div class="callout"><strong>À retenir :</strong> le réseau local permet aux appareils d’échanger des informations et de partager des ressources.</div>
+<div class="diagram" role="img" aria-label="Plusieurs ordinateurs reliés à un switch">
+  <div class="device"><span>🖥️</span>Ordinateur 1</div><div class="arrow">↔</div>
+  <div class="device" style="border-color:#48a57d;background:#e9f8f0"><span>🔌</span>Switch</div><div class="arrow">↔</div>
+  <div class="device"><span>🖥️</span>Ordinateur 2</div>
+  <div class="device"><span>🖨️</span>Imprimante</div>
+</div>
+<p><strong>Exemple :</strong> dans une salle informatique, le professeur peut partager un document avec les ordinateurs des élèves grâce au réseau local.</p>
 </section>
-<section class="card">
-<h2>Leçon 2 : Les équipements réseau</h2>
-<ul>
-<li>Switch : relie les appareils d’un réseau local.</li>
-<li>Routeur : dirige les données entre différents réseaux.</li>
-<li>Point d’accès Wi-Fi : permet la connexion sans fil.</li>
-<li>Câble Ethernet : assure une connexion filaire.</li>
-</ul>
+
+<section id="composants">
+<h2>2. Les composants d’un réseau local</h2>
+<div class="grid">
+  <article class="card"><span class="emoji">🖥️</span><h3>L’ordinateur</h3><p>Il permet de créer, envoyer, recevoir et stocker des informations.</p></article>
+  <article class="card"><span class="emoji">🔌</span><h3>Le commutateur (Switch)</h3><p>Il relie plusieurs appareils dans un réseau local et transmet les données vers le bon destinataire.</p></article>
+  <article class="card"><span class="emoji">🔗</span><h3>Le câble Ethernet</h3><p>Il relie les appareils au réseau par une connexion filaire.</p></article>
+  <article class="card"><span class="emoji">📶</span><h3>Le point d’accès Wi-Fi</h3><p>Il permet aux appareils compatibles de se connecter au réseau sans câble.</p></article>
+  <article class="card"><span class="emoji">📡</span><h3>Le routeur</h3><p>Il relie des réseaux différents, par exemple le réseau local à Internet lorsqu’une connexion est disponible.</p></article>
+</div>
+<div class="callout note"><strong>Attention :</strong> un switch et un routeur n’ont pas le même rôle. Le switch relie les appareils d’un réseau local ; le routeur permet notamment de relier des réseaux différents.</div>
 </section>
-<section class="card">
-<h2>Leçon 3 : Le partage des données</h2>
-<p>Pour partager un fichier, les appareils doivent pouvoir communiquer et les autorisations nécessaires doivent être configurées.</p>
-<p>Il faut respecter les règles de sécurité et protéger les données personnelles.</p>
+
+<section id="types">
+<h2>3. Les types de connexion</h2>
+<div class="grid">
+  <article class="card"><span class="emoji">🧵</span><h3>Réseau filaire</h3><p>Les appareils sont reliés par des câbles, par exemple des câbles Ethernet.</p><p><strong>Exemple :</strong> des ordinateurs reliés à un switch par des câbles.</p></article>
+  <article class="card"><span class="emoji">📶</span><h3>Réseau sans fil</h3><p>Les appareils communiquent sans câble réseau, généralement grâce au Wi-Fi.</p><p><strong>Exemple :</strong> un ordinateur portable connecté au Wi-Fi.</p></article>
+</div>
 </section>
-<section class="card">
-<h2>Exercice interactif</h2>
-<p>Quel équipement relie plusieurs appareils dans un réseau local ?</p>
-<label><input type="radio" name="q" value="0"> Une imprimante</label>
-<label><input type="radio" name="q" value="1"> Un switch</label>
-<label><input type="radio" name="q" value="0"> Un clavier</label>
-<button onclick="corriger()">Vérifier</button>
-<p id="resultat" aria-live="polite"></p>
+
+<section id="echange">
+<h2>4. Comment échanger des informations ?</h2>
+<p>Lorsqu’un fichier est envoyé sur un réseau, on distingue trois éléments :</p>
+<div class="diagram">
+  <div class="device"><span>💻</span>Émetteur<br><small>Envoie le fichier</small></div>
+  <div class="arrow">→</div><div class="device" style="border-color:#e7b44f;background:#fff3df"><span>🌐</span>Réseau local<br><small>Transporte les données</small></div>
+  <div class="arrow">→</div><div class="device"><span>🖥️</span>Récepteur<br><small>Reçoit le fichier</small></div>
+</div>
+<ol class="steps">
+<li><strong>L’émetteur</strong> choisit le fichier à envoyer.</li>
+<li>Le fichier est transmis à travers le réseau local, selon la méthode de partage utilisée.</li>
+<li><strong>Le récepteur</strong> reçoit le fichier et peut l’ouvrir si les autorisations le permettent.</li>
+</ol>
+<div class="callout success"><strong>Exemple :</strong> Sara partage le fichier <code>exercice.docx</code> dans un dossier commun. Son professeur ouvre ce dossier depuis un autre ordinateur et consulte le document.</div>
 </section>
+
+<section id="partage">
+<h2>5. Le partage des ressources</h2>
+<div class="grid">
+  <article class="card"><span class="emoji">📄</span><h3>Partage de fichiers</h3><p>Envoyer ou rendre accessibles des documents, des images ou des vidéos.</p></article>
+  <article class="card"><span class="emoji">📁</span><h3>Partage de dossiers</h3><p>Permettre à plusieurs utilisateurs autorisés d’accéder au même dossier.</p></article>
+  <article class="card"><span class="emoji">🖨️</span><h3>Partage d’imprimante</h3><p>Permettre à plusieurs ordinateurs d’utiliser une même imprimante réseau.</p></article>
+</div>
+<h3>Les avantages du réseau local</h3>
+<ul><li>Échanger rapidement des informations.</li><li>Partager des fichiers et des dossiers.</li><li>Utiliser une imprimante commune.</li><li>Faciliter le travail en groupe et réduire certains coûts.</li></ul>
+</section>
+
+<section>
+<h2>6. Réseau local et Internet : quelle différence ?</h2>
+<table><thead><tr><th>Réseau local (LAN)</th><th>Internet</th></tr></thead><tbody>
+<tr><td>Relie des appareils dans une zone limitée.</td><td>Relie des réseaux du monde entier.</td></tr>
+<tr><td>Peut fonctionner sans connexion Internet.</td><td>Permet d’accéder aux sites et services en ligne.</td></tr>
+<tr><td>Permet le partage local de fichiers et de ressources.</td><td>Permet de communiquer et d’accéder à des informations à distance.</td></tr>
+</tbody></table>
+<div class="callout note"><strong>À retenir :</strong> un réseau local peut fonctionner même si Internet ne marche pas, à condition que le réseau local lui-même soit opérationnel.</div>
+</section>
+
+<section id="securite">
+<h2>7. Les règles de sécurité</h2>
+<ul><li>Utiliser des mots de passe difficiles à deviner.</li><li>Ne pas ouvrir les fichiers inconnus ou suspects.</li><li>Partager uniquement les fichiers nécessaires.</li><li>Donner accès aux dossiers seulement aux personnes autorisées.</li><li>Respecter les règles d’utilisation du réseau de l’établissement.</li></ul>
+</section>
+
+<section>
+<h2>8. Résumé à mémoriser</h2>
+<div class="callout"><strong>Un réseau local (LAN)</strong> relie des appareils dans une zone limitée. Il permet d’échanger des informations et de partager des ressources. Les connexions peuvent être filaires (câble Ethernet) ou sans fil (Wi-Fi). Pour échanger un fichier, un émetteur l’envoie à travers le réseau et un récepteur le reçoit. Le réseau local peut fonctionner sans Internet.</div>
+<p><strong>Vocabulaire essentiel :</strong></p>
+<table><tbody>
+<tr><th>Terme</th><th>Définition simple</th></tr>
+<tr><td>LAN / Réseau local</td><td>Réseau dans une zone limitée.</td></tr>
+<tr><td>Émetteur</td><td>Appareil qui envoie les informations.</td></tr>
+<tr><td>Récepteur</td><td>Appareil qui reçoit les informations.</td></tr>
+<tr><td>Switch / Commutateur</td><td>Appareil qui relie les équipements du réseau local.</td></tr>
+<tr><td>Ethernet</td><td>Connexion réseau filaire.</td></tr>
+<tr><td>Wi-Fi</td><td>Connexion réseau sans fil.</td></tr>
+<tr><td>Partage</td><td>Mise à disposition d’un fichier, d’un dossier ou d’une ressource.</td></tr>
+</tbody></table>
+</section>
+
+<section id="exercices">
+<h2>9. Exercices d’application</h2>
+<p>Réponds aux questions puis clique sur « Corriger mes réponses » pour vérifier tes connaissances.</p>
+<form id="quiz">
+<div class="exercise">
+<h3>Exercice 1 — QCM</h3>
+<div class="question"><strong>1. Un réseau local permet de :</strong>
+<label><input type="radio" name="q1" value="a"> Relier des appareils dans une zone limitée</label>
+<label><input type="radio" name="q1" value="b"> Relier uniquement des pays</label>
+<label><input type="radio" name="q1" value="c"> Imprimer sans ordinateur</label></div>
+<div class="question"><strong>2. Quel appareil relie plusieurs appareils dans un réseau local ?</strong>
+<label><input type="radio" name="q2" value="a"> Le clavier</label>
+<label><input type="radio" name="q2" value="b"> Le Switch</label>
+<label><input type="radio" name="q2" value="c"> Le haut-parleur</label></div>
+<div class="question"><strong>3. Le Wi-Fi est une connexion :</strong>
+<label><input type="radio" name="q3" value="a"> Filaire</label>
+<label><input type="radio" name="q3" value="b"> Sans fil</label></div>
+<div class="question"><strong>4. L’appareil qui reçoit un fichier est :</strong>
+<label><input type="radio" name="q4" value="a"> L’émetteur</label>
+<label><input type="radio" name="q4" value="b"> Le récepteur</label></div>
+</div>
+<div class="exercise">
+<h3>Exercice 2 — Vrai ou faux</h3>
+<div class="question"><strong>1. Un réseau local peut fonctionner sans Internet.</strong>
+<label><input type="radio" name="q5" value="v"> Vrai</label><label><input type="radio" name="q5" value="f"> Faux</label></div>
+<div class="question"><strong>2. Un câble Ethernet permet une connexion filaire.</strong>
+<label><input type="radio" name="q6" value="v"> Vrai</label><label><input type="radio" name="q6" value="f"> Faux</label></div>
+<div class="question"><strong>3. Il faut partager ses mots de passe avec tout le monde.</strong>
+<label><input type="radio" name="q7" value="v"> Vrai</label><label><input type="radio" name="q7" value="f"> Faux</label></div>
+</div>
+<div class="exercise">
+<h3>Exercice 3 — Situation pratique</h3>
+<p>Dans une salle informatique, huit ordinateurs sont reliés à un Switch. Le professeur veut partager un dossier contenant le cours.</p>
+<div class="question"><strong>1. Quel type de réseau est utilisé ?</strong>
+<label><input type="radio" name="q8" value="a"> Un réseau local (LAN)</label><label><input type="radio" name="q8" value="b"> Un réseau mondial uniquement</label></div>
+<div class="question"><strong>2. Quel est l’avantage du partage du dossier ?</strong>
+<label><input type="radio" name="q9" value="a"> Les élèves autorisés peuvent accéder au cours</label><label><input type="radio" name="q9" value="b"> Les ordinateurs s’éteignent automatiquement</label></div>
+<div class="question"><strong>3. Internet est-il obligatoire pour ce partage local ?</strong>
+<label><input type="radio" name="q10" value="a"> Oui, toujours</label><label><input type="radio" name="q10" value="b"> Non, si le réseau local est correctement configuré</label></div>
+</div>
+<button type="button" onclick="corriger()">Corriger mes réponses</button>
+<button type="reset" class="secondary" onclick="reinitialiser()">Recommencer</button>
+<div id="resultat" class="result" aria-live="polite"></div>
+<div id="correction" class="answers">
+<strong>Correction :</strong>
+<ol><li>Réseau local (LAN).</li><li>Le Switch relie les appareils du réseau.</li><li>Le Wi-Fi est sans fil.</li><li>Le récepteur reçoit le fichier.</li><li>Vrai : le LAN peut fonctionner sans Internet.</li><li>Vrai : Ethernet est filaire.</li><li>Faux : les mots de passe doivent rester confidentiels.</li><li>Un réseau local (LAN).</li><li>Les élèves autorisés peuvent accéder au cours.</li><li>Non, si le réseau local est correctement configuré.</li></ol>
+</div>
+</form>
+</section>
+<footer>IDTech • Cours d’informatique • 2e année du collège (2AC)</footer>
 </main>
 <script>
 function corriger(){
-let r=document.querySelector('input[name="q"]:checked');
-document.getElementById('resultat').textContent=
-!r?'Choisis une réponse.':
-r.value==='1'?'✅ Bonne réponse !':'❌ Réessaie.';
+  const reponses={q1:'a',q2:'b',q3:'b',q4:'b',q5:'v',q6:'v',q7:'f',q8:'a',q9:'a',q10:'b'};
+  let score=0, total=Object.keys(reponses).length, sansReponse=0;
+  for(const [q,r] of Object.entries(reponses)){
+    const choix=document.querySelector('input[name="'+q+'"]:checked');
+    if(!choix) sansReponse++;
+    else if(choix.value===r) score++;
+  }
+  document.getElementById('resultat').textContent='Votre score : '+score+'/'+total+(sansReponse?' — Questions sans réponse : '+sansReponse:'');
+  document.getElementById('correction').classList.add('show');
+}
+function reinitialiser(){
+  document.getElementById('resultat').textContent='';
+  document.getElementById('correction').classList.remove('show');
 }
 </script>
 </body>
