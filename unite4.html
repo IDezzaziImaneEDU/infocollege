@@ -1,1 +1,69 @@
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unité 4 | EduTech</title>
+<style>
+body{margin:0;font-family:Arial;background:#f4f7ff;color:#1e293b}
+nav{background:#172554;padding:16px;display:flex;flex-wrap:wrap;gap:15px}
+nav a{color:white;text-decoration:none}
+main{max-width:900px;margin:auto;padding:20px}
+.card{background:white;padding:22px;border-radius:14px;margin:18px 0;box-shadow:0 4px 15px #0001}
+h1,h2{color:#4338ca}
+li{line-height:1.9}
+button{background:#4f46e5;color:white;border:0;padding:12px;border-radius:8px;cursor:pointer}
+label{display:block;padding:10px;margin:8px 0;background:#f1f5f9;border-radius:8px}
+pre{background:#172554;color:#e0e7ff;padding:16px;border-radius:10px;overflow:auto}
+</style>
+</head>
+<body>
+<nav>
+<a href="index.html">🏠 Accueil</a>
+<a href="unite1.html">Unité 1</a>
+<a href="unite2.html">Unité 2</a>
+<a href="unite3.html">Unité 3</a>
+<a href="unite4.html">Unité 4</a>
+</nav>
+<main>
+<h1>Unité 4 : Programmation LOGO</h1>
+<p>Deuxième année du collège — Informatique</p>
+<section class="card">
+<h2>Leçon 1 : La programmation LOGO</h2>
+<p>LOGO est un langage éducatif qui permet de déplacer une tortue à l’écran pour dessiner des formes.</p>
+</section>
+<section class="card">
+<h2>Leçon 2 : Les instructions de base</h2>
+<ul>
+<li>AV 100 : avancer de 100 unités.</li>
+<li>RE 50 : reculer de 50 unités.</li>
+<li>TD 90 : tourner à droite de 90 degrés.</li>
+<li>TG 90 : tourner à gauche de 90 degrés.</li>
+</ul>
+<p>Les abréviations exactes peuvent varier selon la version de LOGO utilisée.</p>
+</section>
+<section class="card">
+<h2>Leçon 3 : Dessiner un carré</h2>
+<pre>REPETE 4 [AV 100 TD 90]</pre>
+<p>La répétition exécute quatre fois les instructions pour former un carré.</p>
+</section>
+<section class="card">
+<h2>Exercice interactif</h2>
+<p>Combien de côtés possède un carré ?</p>
+<label><input type="radio" name="q" value="0"> Trois</label>
+<label><input type="radio" name="q" value="1"> Quatre</label>
+<label><input type="radio" name="q" value="0"> Cinq</label>
+<button onclick="corriger()">Vérifier</button>
+<p id="resultat" aria-live="polite"></p>
+</section>
+</main>
+<script>
+function corriger(){
+let r=document.querySelector('input[name="q"]:checked');
+document.getElementById('resultat').textContent=
+!r?'Choisis une réponse.':
+r.value==='1'?'✅ Bonne réponse !':'❌ Réessaie.';
+}
+</script>
+</body>
+</html>
