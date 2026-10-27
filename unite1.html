@@ -1,76 +1,341 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Unité 1 | EduTech</title>
-<style>
-body{margin:0;font-family:Arial;background:#f4f7ff;color:#1e293b}
-nav{background:#172554;padding:16px;display:flex;flex-wrap:wrap;gap:15px}
-nav a{color:white;text-decoration:none}
-main{max-width:900px;margin:auto;padding:20px}
-.card{background:white;padding:22px;border-radius:14px;margin:18px 0;box-shadow:0 4px 15px #0001}
-h1,h2{color:#4338ca}
-li{line-height:1.9}
-button{background:#4f46e5;color:white;border:0;padding:12px;border-radius:8px;cursor:pointer}
-label{display:block;padding:10px;margin:8px 0;background:#f1f5f9;border-radius:8px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cours détaillé de l'unité 1 : environnement matériel d'un système informatique, 2AC.">
+  <title>IDTech | Unité 1 — Environnement matériel</title>
+  <style>
+    :root {
+      --navy:#10285f; --blue:#1761e6; --sky:#e8f6ff; --purple:#7047e8;
+      --green:#08a477; --orange:#ff9015; --pink:#e63b8c; --line:#dce8fb;
+      --ink:#182b50; --muted:#53678f; --paper:#fff; --bg:#f3f7ff;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .topbar{position:sticky;top:0;z-index:10;background:#fff;box-shadow:0 3px 16px #10285f14}
+    .nav{max-width:1250px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:25px;color:var(--navy)}
+    .brand span{color:var(--blue)} .brand small{display:block;font-size:11px;line-height:1.2;color:var(--muted);font-weight:700}
+    .navlinks{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+    .navlinks a{font-size:13px;font-weight:700;padding:7px 10px;border-radius:18px}
+    .navlinks a:hover{background:#e8e5ff;color:var(--blue)}
+    .hero{color:white;background:linear-gradient(115deg,#102d80,#1761e6 60%,#7950f5);padding:36px 22px;overflow:hidden}
+    .hero-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .eyebrow{display:inline-block;background:#ffffff20;border:1px solid #ffffff50;border-radius:20px;padding:4px 13px;font-weight:800;margin-bottom:12px}
+    h1{font-size:clamp(30px,4.5vw,52px);line-height:1.12;margin-bottom:12px}
+    h1 span{color:#ffd45a}
+    .hero p{font-size:17px;color:#e6efff}
+    .hero-art{font-size:clamp(75px,12vw,135px);filter:drop-shadow(0 10px 12px #071d6a60);text-align:center}
+    .hero-art small{display:block;font-size:28px;letter-spacing:4px}
+    .wrap{max-width:1250px;margin:24px auto;padding:0 18px 36px}
+    .intro{background:white;border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin-bottom:20px;box-shadow:0 5px 18px #1746d10b}
+    .intro strong{color:var(--blue)}
+    .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:0 5px 16px #1746d10b;min-width:0}
+    .span6{grid-column:span 6}.span7{grid-column:span 7}.span5{grid-column:span 5}.span12{grid-column:span 12}
+    .card-head{padding:10px 16px;font-size:20px;font-weight:900;display:flex;align-items:center;gap:10px}
+    .num{display:inline-grid;place-items:center;width:34px;height:34px;flex-shrink:0;border-radius:50%;background:#fff;color:var(--navy);font-size:19px}
+    .head-blue{background:#dbeaff;color:#1746a2}.head-green{background:#d9f8e9;color:#087653}
+    .head-purple{background:#eee5ff;color:#5932bd}.head-orange{background:#fff0d7;color:#a85a00}
+    .head-pink{background:#ffe2f0;color:#a91f67}.head-cyan{background:#d9f8ff;color:#096b88}
+    .card-body{padding:17px}
+    .card p{margin:0 0 11px}.muted{color:var(--muted)}
+    .arabic{direction:rtl;text-align:right;background:#f7f9ff;border-right:4px solid #8b76ed;padding:12px 14px;border-radius:10px;margin-top:12px;font-size:17px}
+    .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:13px}
+    .mini{border:1px solid var(--line);border-radius:12px;padding:13px;background:#f8fbff}
+    .mini h3{font-size:16px;margin-bottom:5px}
+    .mini .emoji{font-size:27px}
+    .pill{display:inline-block;border-radius:20px;padding:3px 10px;background:#e7f2ff;color:#1553b7;font-weight:800;font-size:12px;margin:2px}
+    .diagram{display:grid;gap:8px;margin:14px auto;max-width:520px}
+    .layer{border:2px solid #91c9f5;background:#e6f5ff;border-radius:12px;text-align:center;padding:9px;font-weight:800}
+    .layer:nth-child(2){border-color:#8bd6ad;background:#e4f9ec}
+    .layer:nth-child(3){border-color:#efc35b;background:#fff4d2}
+    .layer:nth-child(4){border-color:#b8a9ee;background:#f0ecff}
+    .down{text-align:center;color:#1746a2;font-size:23px;font-weight:900;line-height:1}
+    .device-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .device-group{border:1px solid var(--line);border-radius:13px;overflow:hidden}
+    .device-group h3{padding:8px;text-align:center;color:white;font-size:15px}
+    .input h3{background:#1777e8}.output h3{background:#7047e8}.both h3{background:#f08a16}
+    .device-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px}
+    .device{text-align:center;background:#f8fbff;border-radius:9px;padding:8px 4px;font-size:13px;font-weight:700}
+    .device b{display:block;font-size:28px;line-height:1.4}
+    .component-list{display:grid;gap:10px}
+    .component{display:grid;grid-template-columns:45px 1fr;gap:10px;align-items:start;padding:10px;border-radius:11px;background:#f8fbff;border:1px solid var(--line)}
+    .component .ico{font-size:29px;text-align:center}
+    .component strong{display:block;color:var(--navy)}
+    .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:stretch;text-align:center}
+    .flow-box{border-radius:13px;padding:15px 8px;border:1px solid var(--line);background:#edf6ff}
+    .flow-box:nth-child(2){background:#e9faef}.flow-box:nth-child(3){background:#fff0f5}
+    .flow-box .big{font-size:37px;display:block}
+    .arrow{display:none}
+    .note{margin-top:13px;background:#fff7d8;border:1px solid #f5d66e;border-radius:11px;padding:12px}
+    .summary{background:#e6f9ff;border:1px solid #8dd9ed;border-radius:13px;padding:14px;font-weight:700}
+    .quiz-question{padding:13px 0;border-bottom:1px solid var(--line)}
+    .quiz-question:last-of-type{border-bottom:0}
+    .quiz-question p{font-weight:800;margin-bottom:7px}
+    .option{display:block;margin:5px 0;padding:7px 10px;border:1px solid var(--line);border-radius:8px;cursor:pointer;background:#fff}
+    .option:hover{background:#f0f6ff}
+    .option input{margin-right:7px}
+    .btn{border:0;border-radius:22px;background:var(--blue);color:white;font-weight:800;padding:11px 18px;cursor:pointer;font-size:14px}
+    .btn:hover{filter:brightness(1.08)}
+    .result{margin-top:12px;padding:12px;border-radius:10px;display:none;font-weight:800}
+    .result.show{display:block;background:#e5f8ed;color:#096b45}
+    .result.bad{background:#fff0e5;color:#a64a00}
+    .backtop{display:inline-block;margin-top:18px;color:var(--blue);font-weight:800}
+    footer{background:#102353;color:white;text-align:center;padding:24px 15px}
+    footer strong{font-size:25px}footer strong span{color:#88b6ff}footer p{color:#dce7ff;font-size:13px}
+    @media(max-width:850px){.nav{flex-direction:column}.navlinks{justify-content:center}.span6,.span7,.span5{grid-column:span 12}.hero-inner{flex-direction:column;text-align:center}.hero-art{font-size:90px}.device-grid{grid-template-columns:1fr 1fr}.device-group:last-child{grid-column:span 2}}
+    @media(max-width:520px){.wrap{padding:0 11px 25px;margin-top:14px}.hero{padding:28px 15px}.hero p{font-size:15px}.card-head{font-size:17px}.card-body{padding:13px}.two-cols,.flow{grid-template-columns:1fr}.device-grid{grid-template-columns:1fr}.device-group:last-child{grid-column:auto}.navlinks a{font-size:12px;padding:6px 8px}.brand{font-size:23px}.hero-art{display:none}}
+  </style>
 </head>
 <body>
-<nav>
-<a href="index.html">🏠 Accueil</a>
-<a href="unite1.html">Unité 1</a>
-<a href="unite2.html">Unité 2</a>
-<a href="unite3.html">Unité 3</a>
-<a href="unite4.html">Unité 4</a>
-</nav>
-<main>
-<h1>Unité 1 : Environnement matériel</h1>
-<p>Deuxième année du collège — Informatique</p>
-<section class="card">
-<h2>Leçon 1 : Les périphériques</h2>
-<ul>
-<li>Entrée : clavier, souris, microphone.</li>
-<li>Sortie : écran, imprimante, haut-parleurs.</li>
-<li>Entrée et sortie : écran tactile.</li>
-<li>Stockage : clé USB, disque dur externe.</li>
-</ul>
+<header class="topbar">
+  <div class="nav">
+    <a class="brand" href="index.html" aria-label="Retour à l'accueil IDTech">🎓 <span>ID<span>Tech</span><small>Professeure Imane Dezzazi</small></span></a>
+    <nav class="navlinks" aria-label="Navigation principale">
+      <a href="index.html">⌂ Accueil</a><a href="#definition">Définition</a><a href="#materiel">Composants</a><a href="#peripheriques">Périphériques</a><a href="#unite-centrale">Unité centrale</a><a href="#quiz">QCM</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">UNITÉ 1 · 2AC</span>
+      <h1>L’environnement matériel<br><span>d’un système informatique</span></h1>
+      <p>Informatique — Deuxième année du collège</p>
+      <p style="margin-top:12px;font-weight:800">Découvrir · Comprendre · Apprendre</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">💻<small>📚 ✏️ 🖥️</small></div>
+  </div>
 </section>
-<section class="card">
-<h2>Leçon 2 : Les composants internes</h2>
-<ul>
-<li>Processeur : exécute les instructions.</li>
-<li>RAM : mémoire temporaire.</li>
-<li>SSD ou disque dur : stockage durable.</li>
-<li>Carte mère : relie les composants.</li>
-</ul>
-</section>
-<section class="card">
-<h2>Leçon 3 : Les unités de mesure</h2>
-<ul>
-<li>1 octet = 8 bits.</li>
-<li>1 Ko = 1 000 octets en système décimal.</li>
-<li>1 Mo = 1 000 Ko en système décimal.</li>
-<li>1 Go = 1 000 Mo en système décimal.</li>
-</ul>
-</section>
-<section class="card">
-<h2>Exercice interactif</h2>
-<p>Quel composant exécute les instructions ?</p>
-<label><input type="radio" name="q" value="0"> L’écran</label>
-<label><input type="radio" name="q" value="1"> Le processeur</label>
-<label><input type="radio" name="q" value="0"> La souris</label>
-<button onclick="corriger()">Vérifier</button>
-<p id="resultat" aria-live="polite"></p>
-</section>
+
+<main class="wrap">
+  <section class="intro">
+    <p><strong>Objectif du cours :</strong> reconnaître les éléments d’un système informatique, distinguer le matériel des logiciels, classer les périphériques et comprendre comment l’ordinateur traite les informations.</p>
+  </section>
+
+  <div class="grid">
+    <section class="card span6" id="definition">
+      <div class="card-head head-blue"><span class="num">1</span> Qu’est-ce qu’un système informatique ?</div>
+      <div class="card-body">
+        <p>Un <strong>système informatique</strong> est un ensemble de matériels et de logiciels qui permet de <strong>saisir, traiter, stocker et restituer</strong> des informations.</p>
+        <div class="two-cols">
+          <div class="mini"><div class="emoji">🧩</div><h3>La partie matérielle (Hardware)</h3><p>Les éléments physiques que l’on peut toucher : écran, clavier, souris, unité centrale, imprimante…</p></div>
+          <div class="mini"><div class="emoji">💿</div><h3>La partie logicielle (Software)</h3><p>Les programmes et applications utilisés par l’ordinateur : système d’exploitation, navigateur, traitement de texte…</p></div>
+        </div>
+        <p class="arabic">النظام المعلوماتي هو مجموعة من المعدات والبرامج التي تسمح بإدخال المعلومات ومعالجتها وتخزينها ثم إخراج النتائج.</p>
+      </div>
+    </section>
+
+    <section class="card span6" id="materiel">
+      <div class="card-head head-green"><span class="num">2</span> Les composants matériels</div>
+      <div class="card-body">
+        <p>Un ordinateur comprend des périphériques visibles et des composants internes qui travaillent ensemble.</p>
+        <div class="component-list">
+          <div class="component"><div class="ico">🖥️</div><div><strong>Écran — périphérique de sortie</strong>Il affiche les textes, images, vidéos et résultats.</div></div>
+          <div class="component"><div class="ico">⌨️</div><div><strong>Clavier — périphérique d’entrée</strong>Il permet de saisir des lettres, chiffres et commandes.</div></div>
+          <div class="component"><div class="ico">🖱️</div><div><strong>Souris — périphérique d’entrée</strong>Elle sert à pointer, sélectionner et cliquer.</div></div>
+          <div class="component"><div class="ico">🖨️</div><div><strong>Imprimante — périphérique de sortie</strong>Elle imprime les résultats sur papier.</div></div>
+          <div class="component"><div class="ico">🔊</div><div><strong>Haut-parleurs — périphériques de sortie</strong>Ils restituent les sons.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card span12" id="peripheriques">
+      <div class="card-head head-cyan"><span class="num">3</span> Les périphériques : entrée, sortie et entrée/sortie</div>
+      <div class="card-body">
+        <p>Un <strong>périphérique</strong> est un appareil qui permet à l’utilisateur ou à l’ordinateur d’échanger des informations.</p>
+        <div class="device-grid">
+          <div class="device-group input"><h3>A. Périphériques d’entrée</h3><p style="padding:8px;font-size:13px">Ils permettent d’introduire des données dans l’ordinateur.</p><div class="device-list">
+            <div class="device"><b>⌨️</b>Clavier</div><div class="device"><b>🖱️</b>Souris</div><div class="device"><b>🎙️</b>Microphone</div><div class="device"><b>📷</b>Webcam</div><div class="device"><b>📠</b>Scanner</div>
+          </div></div>
+          <div class="device-group output"><h3>B. Périphériques de sortie</h3><p style="padding:8px;font-size:13px">Ils restituent les résultats du traitement.</p><div class="device-list">
+            <div class="device"><b>🖥️</b>Écran</div><div class="device"><b>🖨️</b>Imprimante</div><div class="device"><b>🔊</b>Haut-parleurs</div><div class="device"><b>📽️</b>Vidéoprojecteur</div>
+          </div></div>
+          <div class="device-group both"><h3>C. Entrée / sortie</h3><p style="padding:8px;font-size:13px">Ils peuvent recevoir et envoyer des données.</p><div class="device-list">
+            <div class="device"><b>📱</b>Écran tactile</div><div class="device"><b>📡</b>Modem / routeur</div><div class="device"><b>💾</b>Clé USB</div><div class="device"><b>💿</b>Disque externe</div>
+          </div></div>
+        </div>
+        <div class="note"><strong>Astuce pour retenir :</strong> entrée = les données entrent dans l’ordinateur ; sortie = les résultats sortent vers l’utilisateur. Un écran tactile est à la fois une sortie (affichage) et une entrée (toucher).</div>
+      </div>
+    </section>
+
+    <section class="card span7" id="unite-centrale">
+      <div class="card-head head-pink"><span class="num">4</span> L’unité centrale et ses composants</div>
+      <div class="card-body">
+        <p>L’unité centrale contient les principaux composants internes qui exécutent les instructions, relient les éléments et conservent les données.</p>
+        <div class="component-list">
+          <div class="component"><div class="ico">⚡</div><div><strong>Bloc d’alimentation</strong>Fournit l’énergie électrique aux composants.</div></div>
+          <div class="component"><div class="ico">🧩</div><div><strong>Carte mère</strong>Relie les composants et permet leur communication.</div></div>
+          <div class="component"><div class="ico">🧠</div><div><strong>Processeur (CPU)</strong>Exécute les instructions et effectue les opérations de traitement.</div></div>
+          <div class="component"><div class="ico">📗</div><div><strong>Mémoire vive (RAM)</strong>Stocke temporairement les données et programmes en cours d’utilisation. Son contenu disparaît généralement lorsque l’ordinateur s’éteint.</div></div>
+          <div class="component"><div class="ico">💽</div><div><strong>Disque dur / SSD</strong>Conserve durablement les fichiers, logiciels et système, même lorsque l’ordinateur est éteint.</div></div>
+        </div>
+        <div class="note"><strong>À ne pas confondre :</strong> la RAM est une mémoire temporaire ; le disque dur ou le SSD assure le stockage durable.</div>
+      </div>
+    </section>
+
+    <section class="card span5" id="systeme">
+      <div class="card-head head-purple"><span class="num">5</span> Comment les éléments communiquent-ils ?</div>
+      <div class="card-body">
+        <p>Le système d’exploitation fait le lien entre l’utilisateur, les applications et le matériel.</p>
+        <div class="diagram">
+          <div class="layer">👤 Utilisateur</div><div class="down">↕</div>
+          <div class="layer">📱 Applications / programmes</div><div class="down">↕</div>
+          <div class="layer">⚙️ Système d’exploitation</div><div class="down">↕</div>
+          <div class="layer">🖥️ Matériel informatique</div>
+        </div>
+        <p class="muted" style="font-size:13px">Exemples de systèmes d’exploitation : Windows, Linux, macOS et Android.</p>
+      </div>
+    </section>
+
+    <section class="card span12" id="fonctionnement">
+      <div class="card-head head-orange"><span class="num">6</span> Le fonctionnement d’un système informatique</div>
+      <div class="card-body">
+        <p>Le traitement de l’information suit généralement trois grandes étapes :</p>
+        <div class="flow">
+          <div class="flow-box"><span class="big">⌨️</span><strong>1. Entrée</strong><p>On saisit les données à l’aide d’un clavier, d’une souris ou d’un autre périphérique d’entrée.</p></div>
+          <div class="flow-box"><span class="big">🧠</span><strong>2. Traitement</strong><p>Le processeur exécute les instructions et traite les données.</p></div>
+          <div class="flow-box"><span class="big">🖥️</span><strong>3. Sortie</strong><p>Le résultat est affiché à l’écran, imprimé ou diffusé par les haut-parleurs.</p></div>
+        </div>
+        <div class="note"><strong>Exemple :</strong> l’élève tape <em>7 + 5</em> au clavier (entrée), l’ordinateur effectue le calcul (traitement), puis affiche <em>12</em> à l’écran (sortie).</div>
+      </div>
+    </section>
+
+    <section class="card span6">
+      <div class="card-head head-blue"><span class="num">7</span> Le système d’exploitation : définition et rôle</div>
+      <div class="card-body">
+        <p>Le <strong>système d’exploitation</strong> est le logiciel de base qui gère les ressources matérielles et logicielles de l’ordinateur et permet aux applications de fonctionner.</p>
+        <p>Ses principales fonctions sont :</p>
+        <ul style="padding-left:22px">
+          <li><strong>Gestion des processus :</strong> lancer et arrêter les programmes.</li>
+          <li><strong>Gestion de la mémoire :</strong> attribuer et protéger la mémoire.</li>
+          <li><strong>Gestion des fichiers :</strong> créer, lire, organiser et supprimer des fichiers.</li>
+          <li><strong>Gestion des périphériques :</strong> utiliser le clavier, l’écran, l’imprimante, etc.</li>
+          <li><strong>Sécurité :</strong> protéger les données et contrôler les accès.</li>
+          <li><strong>Gestion du réseau :</strong> permettre les connexions et échanges de données.</li>
+        </ul>
+        <p class="arabic">نظام التشغيل هو البرنامج الأساسي الذي يدير موارد الحاسوب، وينظم الملفات والذاكرة والأجهزة، ويسمح للتطبيقات بالعمل.</p>
+      </div>
+    </section>
+
+    <section class="card span6">
+      <div class="card-head head-green"><span class="num">8</span> Exemples de systèmes d’exploitation</div>
+      <div class="card-body">
+        <div class="component-list">
+          <div class="component"><div class="ico">🪟</div><div><strong>Windows</strong>Utilisé sur de nombreux ordinateurs personnels.</div></div>
+          <div class="component"><div class="ico">🐧</div><div><strong>Linux</strong>Utilisé sur des ordinateurs et de nombreux serveurs.</div></div>
+          <div class="component"><div class="ico">🤖</div><div><strong>Android</strong>Utilisé sur de nombreux téléphones et tablettes.</div></div>
+          <div class="component"><div class="ico">🍎</div><div><strong>macOS</strong>Système d’exploitation des ordinateurs Mac d’Apple.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card span12" id="retenir">
+      <div class="card-head head-cyan"><span class="num">✓</span> À retenir — résumé du cours</div>
+      <div class="card-body">
+        <div class="summary">
+          <p>✓ Un système informatique associe du matériel (Hardware) et des logiciels (Software).</p>
+          <p>✓ Les périphériques sont classés en entrée, sortie ou entrée/sortie.</p>
+          <p>✓ Le processeur exécute les instructions ; la RAM stocke temporairement les données ; le disque dur ou SSD les conserve durablement.</p>
+          <p>✓ Le traitement de l’information suit les étapes : entrée → traitement → sortie.</p>
+          <p>✓ Le système d’exploitation gère le matériel, les fichiers, la mémoire, les applications et la sécurité.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card span12" id="quiz">
+      <div class="card-head head-purple"><span class="num">9</span> Exercice — QCM interactif</div>
+      <div class="card-body">
+        <p>Choisis une réponse pour chaque question, puis clique sur « Corriger mes réponses ».</p>
+        <form id="quizForm">
+          <div class="quiz-question"><p>1. Quel périphérique permet de saisir du texte ?</p>
+            <label class="option"><input type="radio" name="q1" value="a"> L’écran</label>
+            <label class="option"><input type="radio" name="q1" value="b"> Le clavier</label>
+            <label class="option"><input type="radio" name="q1" value="c"> L’imprimante</label>
+          </div>
+          <div class="quiz-question"><p>2. Quel composant exécute les instructions ?</p>
+            <label class="option"><input type="radio" name="q2" value="a"> Le processeur (CPU)</label>
+            <label class="option"><input type="radio" name="q2" value="b"> La souris</label>
+            <label class="option"><input type="radio" name="q2" value="c"> Le scanner</label>
+          </div>
+          <div class="quiz-question"><p>3. Quelle mémoire est temporaire ?</p>
+            <label class="option"><input type="radio" name="q3" value="a"> Le SSD</label>
+            <label class="option"><input type="radio" name="q3" value="b"> Le disque dur</label>
+            <label class="option"><input type="radio" name="q3" value="c"> La RAM</label>
+          </div>
+          <div class="quiz-question"><p>4. Quel périphérique restitue un document sur papier ?</p>
+            <label class="option"><input type="radio" name="q4" value="a"> Le microphone</label>
+            <label class="option"><input type="radio" name="q4" value="b"> L’imprimante</label>
+            <label class="option"><input type="radio" name="q4" value="c"> Le clavier</label>
+          </div>
+          <div class="quiz-question"><p>5. Quel est le rôle de la carte mère ?</p>
+            <label class="option"><input type="radio" name="q5" value="a"> Relier les composants</label>
+            <label class="option"><input type="radio" name="q5" value="b"> Imprimer les documents</label>
+            <label class="option"><input type="radio" name="q5" value="c"> Saisir les données</label>
+          </div>
+          <div class="quiz-question"><p>6. Quelle est la bonne suite des étapes de traitement ?</p>
+            <label class="option"><input type="radio" name="q6" value="a"> Sortie → entrée → traitement</label>
+            <label class="option"><input type="radio" name="q6" value="b"> Traitement → sortie → entrée</label>
+            <label class="option"><input type="radio" name="q6" value="c"> Entrée → traitement → sortie</label>
+          </div>
+          <div class="quiz-question"><p>7. Lequel est un système d’exploitation ?</p>
+            <label class="option"><input type="radio" name="q7" value="a"> Microsoft Word</label>
+            <label class="option"><input type="radio" name="q7" value="b"> Windows</label>
+            <label class="option"><input type="radio" name="q7" value="c"> Une souris</label>
+          </div>
+          <button class="btn" type="submit">✓ Corriger mes réponses</button>
+          <button class="btn" type="reset" style="background:#657797;margin-left:6px">Recommencer</button>
+          <div id="quizResult" class="result" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </div>
+  <a class="backtop" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Retour en haut de la page</a>
 </main>
+
+<footer>
+  <strong>🎓 ID<span>Tech</span></strong>
+  <p><b>Professeure Imane Dezzazi</b></p>
+  <p>Plateforme pédagogique d’informatique — Deuxième année du collège</p>
+  <p>© 2026 IDTech. Tous droits réservés.</p>
+</footer>
 <script>
-function corriger(){
-let r=document.querySelector('input[name="q"]:checked');
-document.getElementById('resultat').textContent=
-!r?'Choisis une réponse.':
-r.value==='1'?'✅ Bonne réponse !':'❌ Réessaie.';
-}
+  const answers = {q1:"b",q2:"a",q3:"c",q4:"b",q5:"a",q6:"c",q7:"b"};
+  const explanations = {
+    q1:"Le clavier sert à saisir du texte.",
+    q2:"Le processeur exécute les instructions.",
+    q3:"La RAM est une mémoire temporaire.",
+    q4:"L’imprimante produit le document sur papier.",
+    q5:"La carte mère relie les composants.",
+    q6:"On saisit les données, on les traite, puis on restitue le résultat.",
+    q7:"Windows est un système d’exploitation."
+  };
+  const form = document.getElementById("quizForm");
+  const result = document.getElementById("quizResult");
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    let score = 0, unanswered = 0, details = [];
+    Object.keys(answers).forEach((q, i) => {
+      const chosen = form.querySelector('input[name="'+q+'"]:checked');
+      if (!chosen) unanswered++;
+      if (chosen && chosen.value === answers[q]) score++;
+      details.push((i+1)+". "+explanations[q]);
+    });
+    result.className = "result show" + (score < 4 ? " bad" : "");
+    result.innerHTML = "Ton score : "+score+" / "+Object.keys(answers).length+
+      (unanswered ? " — "+unanswered+" question(s) sans réponse." : ".")+
+      "<br><br><strong>Correction :</strong><br>"+details.join("<br>");
+    result.scrollIntoView({behavior:"smooth",block:"nearest"});
+  });
+  form.addEventListener("reset", function() {
+    result.className = "result";
+    result.innerHTML = "";
+  });
 </script>
 </body>
 </html>
