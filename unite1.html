@@ -3,72 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EduTech | Informatique 2AC</title>
+<title>Unité 1 | EduTech</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f4f7ff;color:#1e293b}
-header{padding:20px;background:white;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:23px;color:#4f46e5;font-weight:bold}
-.hero{padding:55px 20px;text-align:center;color:white;background:linear-gradient(135deg,#172554,#6366f1)}
-.hero h1{font-size:clamp(28px,5vw,42px)}
-main{max-width:1100px;margin:auto;padding:25px 16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-.card{background:white;padding:24px;border-radius:16px;box-shadow:0 5px 20px #0001;display:flex;flex-direction:column}
-.icon{font-size:38px}
-.card h2{color:#4338ca}
-.card p{line-height:1.7;flex:1;color:#64748b}
-.btn{display:block;text-align:center;background:#4f46e5;color:white;padding:13px;text-decoration:none;border-radius:9px;font-weight:bold}
-.btn:hover{background:#3730a3}
-footer{text-align:center;padding:25px;background:#172554;color:white;margin-top:30px}
+body{margin:0;font-family:Arial;background:#f4f7ff;color:#1e293b}
+nav{background:#172554;padding:16px;display:flex;flex-wrap:wrap;gap:15px}
+nav a{color:white;text-decoration:none}
+main{max-width:900px;margin:auto;padding:20px}
+.card{background:white;padding:22px;border-radius:14px;margin:18px 0;box-shadow:0 4px 15px #0001}
+h1,h2{color:#4338ca}
+li{line-height:1.9}
+button{background:#4f46e5;color:white;border:0;padding:12px;border-radius:8px;cursor:pointer}
+label{display:block;padding:10px;margin:8px 0;background:#f1f5f9;border-radius:8px}
 </style>
 </head>
 <body>
-<header>
-<div class="logo">🎓 EduTech</div>
-<strong>Informatique 2AC</strong>
-</header>
-<section class="hero">
-<h1>L’atelier du savoir numérique</h1>
-<p>Professeure Imane Dezzazi</p>
-<p>Apprendre · Pratiquer · Réussir</p>
-</section>
+<nav>
+<a href="index.html">🏠 Accueil</a>
+<a href="unite1.html">Unité 1</a>
+<a href="unite2.html">Unité 2</a>
+<a href="unite3.html">Unité 3</a>
+<a href="unite4.html">Unité 4</a>
+</nav>
 <main>
-<h2 style="text-align:center">📚 Nos unités d’apprentissage</h2>
-<p style="text-align:center">Choisis une unité pour commencer.</p>
-<div class="grid">
-<article class="card">
-<div class="icon">💻</div>
-<h2>Unité 1</h2>
-<h3>Environnement matériel</h3>
-<p>Composants, périphériques, mémoire et connecteurs.</p>
-<a class="btn" href="unite1.html">Découvrir →</a>
-</article>
-<article class="card">
-<div class="icon">🌐</div>
-<h2>Unité 2</h2>
-<h3>Réseau local</h3>
-<p>Échange d’informations et équipements réseau.</p>
-<a class="btn" href="unite2.html">Découvrir →</a>
-</article>
-<article class="card">
-<div class="icon">📊</div>
-<h2>Unité 3</h2>
-<h3>Tableur Excel</h3>
-<p>Cellules, tableaux, formules et calculs.</p>
-<a class="btn" href="unite3.html">Découvrir →</a>
-</article>
-<article class="card">
-<div class="icon">🐢</div>
-<h2>Unité 4</h2>
-<h3>Programmation LOGO</h3>
-<p>Instructions, déplacements et dessins géométriques.</p>
-<a class="btn" href="unite4.html">Découvrir →</a>
-</article>
-</div>
+<h1>Unité 1 : Environnement matériel</h1>
+<p>Deuxième année du collège — Informatique</p>
+<section class="card">
+<h2>Leçon 1 : Les périphériques</h2>
+<ul>
+<li>Entrée : clavier, souris, microphone.</li>
+<li>Sortie : écran, imprimante, haut-parleurs.</li>
+<li>Entrée et sortie : écran tactile.</li>
+<li>Stockage : clé USB, disque dur externe.</li>
+</ul>
+</section>
+<section class="card">
+<h2>Leçon 2 : Les composants internes</h2>
+<ul>
+<li>Processeur : exécute les instructions.</li>
+<li>RAM : mémoire temporaire.</li>
+<li>SSD ou disque dur : stockage durable.</li>
+<li>Carte mère : relie les composants.</li>
+</ul>
+</section>
+<section class="card">
+<h2>Leçon 3 : Les unités de mesure</h2>
+<ul>
+<li>1 octet = 8 bits.</li>
+<li>1 Ko = 1 000 octets en système décimal.</li>
+<li>1 Mo = 1 000 Ko en système décimal.</li>
+<li>1 Go = 1 000 Mo en système décimal.</li>
+</ul>
+</section>
+<section class="card">
+<h2>Exercice interactif</h2>
+<p>Quel composant exécute les instructions ?</p>
+<label><input type="radio" name="q" value="0"> L’écran</label>
+<label><input type="radio" name="q" value="1"> Le processeur</label>
+<label><input type="radio" name="q" value="0"> La souris</label>
+<button onclick="corriger()">Vérifier</button>
+<p id="resultat" aria-live="polite"></p>
+</section>
 </main>
-<footer>
-<strong>EduTech — Professeure Imane Dezzazi</strong>
-<p>Plateforme pédagogique d’informatique</p>
-</footer>
+<script>
+function corriger(){
+let r=document.querySelector('input[name="q"]:checked');
+document.getElementById('resultat').textContent=
+!r?'Choisis une réponse.':
+r.value==='1'?'✅ Bonne réponse !':'❌ Réessaie.';
+}
+</script>
 </body>
 </html>
