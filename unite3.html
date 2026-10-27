@@ -2,67 +2,131 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Unité 3 | EduTech</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unité 3 : cours sur le tableur pour la 2e année du collège (2AC), avec exemples et exercices corrigés.">
+<title>Unité 3 — Le tableur | IDTech</title>
 <style>
-body{margin:0;font-family:Arial;background:#f4f7ff;color:#1e293b}
-nav{background:#172554;padding:16px;display:flex;flex-wrap:wrap;gap:15px}
-nav a{color:white;text-decoration:none}
-main{max-width:900px;margin:auto;padding:20px}
-.card{background:white;padding:22px;border-radius:14px;margin:18px 0;box-shadow:0 4px 15px #0001}
-h1,h2{color:#4338ca}
-li{line-height:1.9}
-button{background:#4f46e5;color:white;border:0;padding:12px;border-radius:8px;cursor:pointer}
-label{display:block;padding:10px;margin:8px 0;background:#f1f5f9;border-radius:8px}
+:root{--blue:#1457a6;--pale:#eaf4ff;--green:#16845b;--greenp:#e9f8f0;--orange:#a95608;--orangep:#fff3df;--ink:#172b45;--muted:#52657c;--line:#d7e2ef;--bg:#f4f7fb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.7}header{background:linear-gradient(130deg,#103d7b,#1976c9);color:white;text-align:center;padding:32px 16px}header h1{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.2;margin:12px 0}header p{margin:0;color:#e5f2ff}.tag{display:inline-block;padding:4px 12px;border:1px solid #ffffff66;border-radius:20px;background:#ffffff20}
+main{max-width:980px;margin:24px auto;padding:0 14px 45px}nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}nav a{background:white;border:1px solid var(--line);border-radius:9px;padding:7px 11px;color:var(--blue);text-decoration:none}section{background:white;border:1px solid var(--line);border-radius:15px;padding:clamp(16px,3vw,27px);margin:17px 0;box-shadow:0 5px 18px #193b600b}h2{color:var(--blue);font-size:1.4rem;border-bottom:2px solid var(--pale);padding-bottom:8px;margin:0 0 13px}h3{font-size:1.08rem;margin:12px 0 5px}.callout{background:var(--pale);border-left:5px solid var(--blue);border-radius:10px;padding:12px 14px;margin:12px 0}.green{background:var(--greenp);border-left-color:var(--green)}.orange{background:var(--orangep);border-left-color:var(--orange)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.card{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}.emoji{font-size:2rem}.card h3{color:var(--blue);margin:4px 0}.sheet-wrap{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:9px}.sheet{border-collapse:collapse;width:100%;min-width:430px;background:white}.sheet th,.sheet td{border:1px solid #b9cce0;padding:9px;text-align:center}.sheet thead th{background:#dbeafe;color:#174b88}.sheet .rowhead{background:#edf3f9;font-weight:bold;width:42px}.sheet td.active{background:#fff2b5;border:2px solid #d99b00}.sheet td.formula{background:#e4f7ec;color:#11623f;font-weight:bold}table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid var(--line);padding:9px;text-align:left;vertical-align:top}th{background:var(--pale)}code,.formula{font-family:Consolas,monospace;background:#edf3f9;border-radius:5px;padding:2px 5px}.steps{padding-left:24px}.steps li{padding:5px 0}.exercise{border:1px solid var(--line);border-radius:12px;padding:15px;margin:13px 0}.question{margin:12px 0}.question label{display:block;margin:5px 0;cursor:pointer}.question input{margin-right:7px}button{background:var(--blue);color:white;border:0;border-radius:9px;padding:11px 15px;font-size:1rem;font-weight:bold;cursor:pointer;margin:5px 5px 0 0}button.secondary{background:#52657c}.result{font-weight:bold;margin:12px 0}.answers{display:none;background:var(--greenp);border-radius:10px;padding:13px;margin-top:12px}.answers.show{display:block}footer{text-align:center;color:var(--muted);padding:18px}@media(max-width:560px){header{padding:25px 12px}section{padding:15px}nav a{font-size:.9rem}table{font-size:.9rem}}@media print{nav,button{display:none}body{background:white}section{box-shadow:none;break-inside:avoid}}
 </style>
 </head>
 <body>
-<nav>
-<a href="index.html">🏠 Accueil</a>
-<a href="unite1.html">Unité 1</a>
-<a href="unite2.html">Unité 2</a>
-<a href="unite3.html">Unité 3</a>
-<a href="unite4.html">Unité 4</a>
-</nav>
+<header><span class="tag">IDTech • Informatique • 2AC</span><h1>Unité 3 : Le tableur</h1><p>Comprendre les cellules, les formules et les calculs pas à pas</p></header>
 <main>
-<h1>Unité 3 : Tableur Excel</h1>
-<p>Deuxième année du collège — Informatique</p>
-<section class="card">
-<h2>Leçon 1 : Découvrir le tableur</h2>
-<ul>
-<li>Classeur : fichier contenant une ou plusieurs feuilles.</li>
-<li>Feuille : espace organisé en lignes et colonnes.</li>
-<li>Cellule : intersection d’une ligne et d’une colonne.</li>
-<li>Adresse : référence d’une cellule, par exemple A1.</li>
-</ul>
+<nav><a href="#definition">Définition</a><a href="#interface">Interface</a><a href="#cellules">Cellules</a><a href="#formules">Formules</a><a href="#fonctions">Fonctions</a><a href="#exercices">Exercices</a></nav>
+
+<section id="definition">
+<h2>1. Qu’est-ce qu’un tableur ?</h2>
+<p>Un <strong>tableur</strong> est un logiciel qui permet d’organiser des données dans un tableau, d’effectuer des calculs automatiquement et de créer des graphiques.</p>
+<div class="grid">
+<div class="card"><span class="emoji">📊</span><h3>Exemples de tableurs</h3><p>Microsoft Excel, LibreOffice Calc et Google Sheets.</p></div>
+<div class="card"><span class="emoji">🧮</span><h3>À quoi sert-il ?</h3><p>Calculer des notes, gérer un budget, faire des listes et représenter des données sous forme de graphiques.</p></div>
+</div>
+<div class="callout green"><strong>Exemple :</strong> un professeur utilise un tableur pour calculer automatiquement la moyenne des élèves.</div>
 </section>
-<section class="card">
-<h2>Leçon 2 : Les formules</h2>
-<p>Une formule commence généralement par le signe =.</p>
-<ul>
-<li>=A1+B1 : addition de deux cellules.</li>
-<li>=SOMME(A1:A5) : somme d’une plage de cellules.</li>
-<li>=MOYENNE(A1:A5) : moyenne d’une plage.</li>
-</ul>
-<p>Le nom des fonctions peut varier selon la langue et la version du tableur.</p>
+
+<section id="interface">
+<h2>2. Découvrir une feuille de calcul</h2>
+<p>Dans un tableur, les données sont organisées en <strong>colonnes</strong> (repérées par des lettres) et en <strong>lignes</strong> (repérées par des nombres). Leur croisement forme une cellule.</p>
+<div class="sheet-wrap"><table class="sheet" aria-label="Exemple de feuille de calcul"><thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead><tbody>
+<tr><th class="rowhead">1</th><td>Nom</td><td>Note 1</td><td>Note 2</td><td>Moyenne</td></tr>
+<tr><th class="rowhead">2</th><td>Salma</td><td>14</td><td>16</td><td class="formula">15</td></tr>
+<tr><th class="rowhead">3</th><td>Yassine</td><td>12</td><td>10</td><td class="formula">11</td></tr>
+<tr><th class="rowhead">4</th><td>Imane</td><td>17</td><td>15</td><td class="formula">16</td></tr>
+</tbody></table></div>
+<div class="grid">
+<div class="card"><h3>Colonne</h3><p>Verticale, identifiée par une lettre : A, B, C…</p></div>
+<div class="card"><h3>Ligne</h3><p>Horizontale, identifiée par un nombre : 1, 2, 3…</p></div>
+<div class="card"><h3>Cellule</h3><p>Intersection d’une colonne et d’une ligne. Exemple : <code>B3</code>.</p></div>
+<div class="card"><h3>Cellule active</h3><p>Cellule sélectionnée, dans laquelle on peut saisir ou modifier une donnée.</p></div>
+</div>
+<p><strong>Exemple :</strong> la cellule <code>C2</code> se trouve dans la colonne C et la ligne 2. Dans le tableau ci-dessus, elle contient la note 16.</p>
 </section>
-<section class="card">
-<h2>Exercice interactif</h2>
-<p>Quelle formule permet d’additionner les cellules A1 et B1 ?</p>
-<label><input type="radio" name="q" value="0"> A1+B1</label>
-<label><input type="radio" name="q" value="1"> =A1+B1</label>
-<label><input type="radio" name="q" value="0"> SOMME A1 B1 sans formule</label>
-<button onclick="corriger()">Vérifier</button>
-<p id="resultat" aria-live="polite"></p>
+
+<section id="cellules">
+<h2>3. Les données d’une cellule</h2>
+<p>On peut saisir plusieurs types de données dans une cellule :</p>
+<ul><li><strong>Texte :</strong> un nom, un titre ou une matière, par exemple <code>Salma</code>.</li><li><strong>Nombre :</strong> une note ou un prix, par exemple <code>14</code>.</li><li><strong>Formule :</strong> une instruction qui effectue un calcul, par exemple <code>=B2+C2</code>.</li></ul>
+<h3>Comment saisir une donnée ?</h3>
+<ol class="steps"><li>Cliquer sur la cellule souhaitée.</li><li>Taper le texte, le nombre ou la formule.</li><li>Valider en appuyant sur la touche <strong>Entrée (Enter)</strong>.</li></ol>
 </section>
+
+<section id="formules">
+<h2>4. Utiliser les formules de calcul</h2>
+<p>Une formule permet de faire un calcul automatiquement. Dans un tableur, une formule commence généralement par le signe <strong>=</strong>.</p>
+<table><thead><tr><th>Opération</th><th>Symbole</th><th>Exemple de formule</th><th>Résultat</th></tr></thead><tbody>
+<tr><td>Addition</td><td>+</td><td><code>=B2+C2</code></td><td>14 + 16 = 30</td></tr>
+<tr><td>Soustraction</td><td>-</td><td><code>=B2-C2</code></td><td>14 - 16 = -2</td></tr>
+<tr><td>Multiplication</td><td>*</td><td><code>=B2*C2</code></td><td>14 × 16 = 224</td></tr>
+<tr><td>Division</td><td>/</td><td><code>=B2/C2</code></td><td>14 ÷ 16 = 0,875</td></tr>
+</tbody></table>
+<div class="callout orange"><strong>Attention :</strong> dans les formules, on utilise les références des cellules (par exemple B2 et C2), et non pas forcément les nombres eux-mêmes. Si une valeur change, le résultat se met à jour automatiquement.</div>
+<h3>Exemple : calculer une moyenne</h3>
+<p>Si la note 1 se trouve dans <code>B2</code> et la note 2 dans <code>C2</code>, on peut écrire :</p>
+<p><code>=(B2+C2)/2</code></p>
+<p>Avec 14 et 16, la moyenne est <strong>15</strong>.</p>
+<div class="sheet-wrap"><table class="sheet"><thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead><tbody>
+<tr><th class="rowhead">1</th><td>Nom</td><td>Note 1</td><td>Note 2</td><td>Moyenne</td></tr>
+<tr><th class="rowhead">2</th><td>Salma</td><td>14</td><td>16</td><td class="formula">=(B2+C2)/2 → 15</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="fonctions">
+<h2>5. Les fonctions simples</h2>
+<p>Une fonction est une formule déjà préparée par le tableur pour effectuer un calcul.</p>
+<table><thead><tr><th>Fonction</th><th>Rôle</th><th>Exemple</th></tr></thead><tbody>
+<tr><td><code>=SOMME(B2:B4)</code></td><td>Additionner les valeurs de B2 à B4.</td><td>14 + 12 + 17 = 43</td></tr>
+<tr><td><code>=MOYENNE(B2:B4)</code></td><td>Calculer la moyenne des valeurs.</td><td>43 ÷ 3 ≈ 14,33</td></tr>
+<tr><td><code>=MAX(B2:B4)</code></td><td>Donner la plus grande valeur.</td><td>17</td></tr>
+<tr><td><code>=MIN(B2:B4)</code></td><td>Donner la plus petite valeur.</td><td>12</td></tr>
+</tbody></table>
+<p><strong>Que signifie B2:B4 ?</strong> Cela désigne la plage de cellules allant de B2 à B4, c’est-à-dire B2, B3 et B4.</p>
+<div class="callout">Selon le logiciel et sa langue, le nom des fonctions et le séparateur des arguments peuvent varier. Les exemples ci-dessus utilisent les noms français courants.</div>
+</section>
+
+<section>
+<h2>6. Mettre en forme un tableau</h2>
+<p>Pour rendre un tableau plus lisible, on peut :</p>
+<ul><li>mettre les titres en <strong>gras</strong> ;</li><li>modifier la couleur du texte ou de l’arrière-plan ;</li><li>ajuster la largeur des colonnes ;</li><li>aligner les données ;</li><li>ajouter des bordures aux cellules.</li></ul>
+<p>La mise en forme améliore la présentation, mais ne change pas le résultat des calculs.</p>
+</section>
+
+<section>
+<h2>7. Résumé à mémoriser</h2>
+<div class="callout green">Un <strong>tableur</strong> organise les données dans une feuille composée de lignes et de colonnes. Une <strong>cellule</strong> est identifiée par la lettre de sa colonne et le numéro de sa ligne, par exemple B3. Une <strong>formule</strong> commence par = et permet de calculer automatiquement. Les fonctions SOMME, MOYENNE, MAX et MIN facilitent les calculs.</div>
+</section>
+
+<section id="exercices">
+<h2>8. Exercices d’application</h2>
+<p>Choisis une réponse pour chaque question, puis clique sur « Corriger mes réponses ».</p>
+<form id="quiz">
+<div class="exercise"><h3>Exercice 1 — QCM</h3>
+<div class="question"><strong>1. À quoi sert un tableur ?</strong><label><input type="radio" name="q1" value="a"> À organiser des données et effectuer des calculs</label><label><input type="radio" name="q1" value="b"> À regarder uniquement des vidéos</label></div>
+<div class="question"><strong>2. Une cellule est :</strong><label><input type="radio" name="q2" value="a"> Une ligne entière</label><label><input type="radio" name="q2" value="b"> L’intersection d’une ligne et d’une colonne</label></div>
+<div class="question"><strong>3. Quelle formule additionne les cellules B2 et C2 ?</strong><label><input type="radio" name="q3" value="a"> B2+C2</label><label><input type="radio" name="q3" value="b"> =B2+C2</label><label><input type="radio" name="q3" value="c"> SOMME B2 C2 sans signe</label></div>
+<div class="question"><strong>4. Quelle fonction calcule une moyenne ?</strong><label><input type="radio" name="q4" value="a"> MAX</label><label><input type="radio" name="q4" value="b"> MOYENNE</label><label><input type="radio" name="q4" value="c"> MIN</label></div>
+</div>
+<div class="exercise"><h3>Exercice 2 — Calculs</h3><p>Dans un tableau, B2 = 10 et C2 = 14.</p>
+<div class="question"><strong>1. Quel est le résultat de <code>=B2+C2</code> ?</strong><label><input type="radio" name="q5" value="a"> 4</label><label><input type="radio" name="q5" value="b"> 24</label><label><input type="radio" name="q5" value="c"> 140</label></div>
+<div class="question"><strong>2. Quel est le résultat de <code>=(B2+C2)/2</code> ?</strong><label><input type="radio" name="q6" value="a"> 12</label><label><input type="radio" name="q6" value="b"> 24</label><label><input type="radio" name="q6" value="c"> 7</label></div>
+<div class="question"><strong>3. Quelle fonction donne la plus grande valeur ?</strong><label><input type="radio" name="q7" value="a"> MIN</label><label><input type="radio" name="q7" value="b"> SOMME</label><label><input type="radio" name="q7" value="c"> MAX</label></div>
+</div>
+<div class="exercise"><h3>Exercice 3 — Vrai ou faux</h3>
+<div class="question"><strong>1. Une formule de calcul commence généralement par le signe =.</strong><label><input type="radio" name="q8" value="v"> Vrai</label><label><input type="radio" name="q8" value="f"> Faux</label></div>
+<div class="question"><strong>2. La cellule C4 se trouve dans la colonne C et la ligne 4.</strong><label><input type="radio" name="q9" value="v"> Vrai</label><label><input type="radio" name="q9" value="f"> Faux</label></div>
+<div class="question"><strong>3. La mise en forme change automatiquement la valeur calculée.</strong><label><input type="radio" name="q10" value="v"> Vrai</label><label><input type="radio" name="q10" value="f"> Faux</label></div>
+</div>
+<button type="button" onclick="corriger()">Corriger mes réponses</button><button type="reset" class="secondary" onclick="resetQuiz()">Recommencer</button>
+<div class="result" id="resultat" aria-live="polite"></div>
+<div class="answers" id="correction"><strong>Correction :</strong><ol><li>Organiser des données et effectuer des calculs.</li><li>Intersection d’une ligne et d’une colonne.</li><li><code>=B2+C2</code>.</li><li>MOYENNE.</li><li>10 + 14 = 24.</li><li>(10 + 14) ÷ 2 = 12.</li><li>MAX.</li><li>Vrai.</li><li>Vrai.</li><li>Faux : la mise en forme change l’apparence, pas le calcul.</li></ol></div>
+</form>
+</section>
+<footer>IDTech • Unité 3 — Le tableur • Informatique 2AC</footer>
 </main>
 <script>
-function corriger(){
-let r=document.querySelector('input[name="q"]:checked');
-document.getElementById('resultat').textContent=
-!r?'Choisis une réponse.':
-r.value==='1'?'✅ Bonne réponse !':'❌ Réessaie.';
-}
+function corriger(){const key={q1:'a',q2:'b',q3:'b',q4:'b',q5:'b',q6:'a',q7:'c',q8:'v',q9:'v',q10:'f'};let score=0,missing=0;for(const [q,a] of Object.entries(key)){const x=document.querySelector('input[name="'+q+'"]:checked');if(!x)missing++;else if(x.value===a)score++;}document.getElementById('resultat').textContent='Votre score : '+score+'/10'+(missing?' — Questions sans réponse : '+missing:'');document.getElementById('correction').classList.add('show')}
+function resetQuiz(){document.getElementById('resultat').textContent='';document.getElementById('correction').classList.remove('show')}
 </script>
 </body>
 </html>
