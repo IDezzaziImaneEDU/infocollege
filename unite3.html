@@ -1,1 +1,68 @@
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unité 3 | EduTech</title>
+<style>
+body{margin:0;font-family:Arial;background:#f4f7ff;color:#1e293b}
+nav{background:#172554;padding:16px;display:flex;flex-wrap:wrap;gap:15px}
+nav a{color:white;text-decoration:none}
+main{max-width:900px;margin:auto;padding:20px}
+.card{background:white;padding:22px;border-radius:14px;margin:18px 0;box-shadow:0 4px 15px #0001}
+h1,h2{color:#4338ca}
+li{line-height:1.9}
+button{background:#4f46e5;color:white;border:0;padding:12px;border-radius:8px;cursor:pointer}
+label{display:block;padding:10px;margin:8px 0;background:#f1f5f9;border-radius:8px}
+</style>
+</head>
+<body>
+<nav>
+<a href="index.html">🏠 Accueil</a>
+<a href="unite1.html">Unité 1</a>
+<a href="unite2.html">Unité 2</a>
+<a href="unite3.html">Unité 3</a>
+<a href="unite4.html">Unité 4</a>
+</nav>
+<main>
+<h1>Unité 3 : Tableur Excel</h1>
+<p>Deuxième année du collège — Informatique</p>
+<section class="card">
+<h2>Leçon 1 : Découvrir le tableur</h2>
+<ul>
+<li>Classeur : fichier contenant une ou plusieurs feuilles.</li>
+<li>Feuille : espace organisé en lignes et colonnes.</li>
+<li>Cellule : intersection d’une ligne et d’une colonne.</li>
+<li>Adresse : référence d’une cellule, par exemple A1.</li>
+</ul>
+</section>
+<section class="card">
+<h2>Leçon 2 : Les formules</h2>
+<p>Une formule commence généralement par le signe =.</p>
+<ul>
+<li>=A1+B1 : addition de deux cellules.</li>
+<li>=SOMME(A1:A5) : somme d’une plage de cellules.</li>
+<li>=MOYENNE(A1:A5) : moyenne d’une plage.</li>
+</ul>
+<p>Le nom des fonctions peut varier selon la langue et la version du tableur.</p>
+</section>
+<section class="card">
+<h2>Exercice interactif</h2>
+<p>Quelle formule permet d’additionner les cellules A1 et B1 ?</p>
+<label><input type="radio" name="q" value="0"> A1+B1</label>
+<label><input type="radio" name="q" value="1"> =A1+B1</label>
+<label><input type="radio" name="q" value="0"> SOMME A1 B1 sans formule</label>
+<button onclick="corriger()">Vérifier</button>
+<p id="resultat" aria-live="polite"></p>
+</section>
+</main>
+<script>
+function corriger(){
+let r=document.querySelector('input[name="q"]:checked');
+document.getElementById('resultat').textContent=
+!r?'Choisis une réponse.':
+r.value==='1'?'✅ Bonne réponse !':'❌ Réessaie.';
+}
+</script>
+</body>
+</html>
