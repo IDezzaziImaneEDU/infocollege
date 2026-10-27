@@ -2,68 +2,151 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Unité 4 | EduTech</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unité 4 : programmation LOGO, cours simple pour la 2e année du collège avec exemples et exercices corrigés.">
+<title>Unité 4 — Programmation LOGO | IDTech</title>
 <style>
-body{margin:0;font-family:Arial;background:#f4f7ff;color:#1e293b}
-nav{background:#172554;padding:16px;display:flex;flex-wrap:wrap;gap:15px}
-nav a{color:white;text-decoration:none}
-main{max-width:900px;margin:auto;padding:20px}
-.card{background:white;padding:22px;border-radius:14px;margin:18px 0;box-shadow:0 4px 15px #0001}
-h1,h2{color:#4338ca}
-li{line-height:1.9}
-button{background:#4f46e5;color:white;border:0;padding:12px;border-radius:8px;cursor:pointer}
-label{display:block;padding:10px;margin:8px 0;background:#f1f5f9;border-radius:8px}
-pre{background:#172554;color:#e0e7ff;padding:16px;border-radius:10px;overflow:auto}
+:root{--blue:#1457a6;--pale:#eaf4ff;--green:#16845b;--greenp:#e9f8f0;--orange:#a95608;--orangep:#fff3df;--ink:#172b45;--muted:#52657c;--line:#d7e2ef;--bg:#f4f7fb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.7}header{background:linear-gradient(130deg,#103d7b,#1976c9);color:white;text-align:center;padding:32px 16px}header h1{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.2;margin:12px 0}header p{margin:0;color:#e5f2ff}.tag{display:inline-block;padding:4px 12px;border:1px solid #ffffff66;border-radius:20px;background:#ffffff20}main{max-width:980px;margin:24px auto;padding:0 14px 45px}nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}nav a{background:white;border:1px solid var(--line);border-radius:9px;padding:7px 11px;color:var(--blue);text-decoration:none}section{background:white;border:1px solid var(--line);border-radius:15px;padding:clamp(16px,3vw,27px);margin:17px 0;box-shadow:0 5px 18px #193b600b}h2{color:var(--blue);font-size:1.4rem;border-bottom:2px solid var(--pale);padding-bottom:8px;margin:0 0 13px}h3{font-size:1.08rem;margin:12px 0 5px}.callout{background:var(--pale);border-left:5px solid var(--blue);border-radius:10px;padding:12px 14px;margin:12px 0}.green{background:var(--greenp);border-left-color:var(--green)}.orange{background:var(--orangep);border-left-color:var(--orange)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.card{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}.emoji{font-size:2rem}.card h3{color:var(--blue);margin:4px 0}code,pre{font-family:Consolas,Monaco,monospace}code{background:#edf3f9;border-radius:5px;padding:2px 5px}.codebox{background:#12243a;color:#e8f3ff;padding:15px;border-radius:12px;overflow:auto;font-size:1rem;line-height:1.8;white-space:pre-wrap}.diagram{background:#f8fbff;border:1px dashed #9bbde4;border-radius:12px;padding:14px;margin:12px 0;text-align:center}.steps{padding-left:24px}.steps li{padding:5px 0}table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid var(--line);padding:9px;text-align:left;vertical-align:top}th{background:var(--pale)}.exercise{border:1px solid var(--line);border-radius:12px;padding:15px;margin:13px 0}.question{margin:12px 0}.question label{display:block;margin:5px 0;cursor:pointer}.question input{margin-right:7px}button{background:var(--blue);color:white;border:0;border-radius:9px;padding:11px 15px;font-size:1rem;font-weight:bold;cursor:pointer;margin:5px 5px 0 0}button.secondary{background:#52657c}.result{font-weight:bold;margin:12px 0}.answers{display:none;background:var(--greenp);border-radius:10px;padding:13px;margin-top:12px}.answers.show{display:block}.canvasbox{border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff;text-align:center}.canvasbox canvas{width:100%;max-width:440px;height:auto;border:1px solid #d7e2ef;border-radius:8px;background:#fbfdff}.controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:center;margin:10px 0}.controls select{padding:8px;border:1px solid var(--line);border-radius:7px;font-size:1rem}footer{text-align:center;color:var(--muted);padding:18px}@media(max-width:560px){header{padding:25px 12px}section{padding:15px}nav a{font-size:.9rem}table{font-size:.9rem}}@media print{nav,button,.controls{display:none}body{background:white}section{box-shadow:none;break-inside:avoid}}
 </style>
 </head>
 <body>
-<nav>
-<a href="index.html">🏠 Accueil</a>
-<a href="unite1.html">Unité 1</a>
-<a href="unite2.html">Unité 2</a>
-<a href="unite3.html">Unité 3</a>
-<a href="unite4.html">Unité 4</a>
-</nav>
+<header><span class="tag">IDTech • Informatique • 2AC</span><h1>Unité 4 : Programmation LOGO</h1><p>Apprendre à déplacer la tortue et à dessiner avec des instructions simples</p></header>
 <main>
-<h1>Unité 4 : Programmation LOGO</h1>
-<p>Deuxième année du collège — Informatique</p>
-<section class="card">
-<h2>Leçon 1 : La programmation LOGO</h2>
-<p>LOGO est un langage éducatif qui permet de déplacer une tortue à l’écran pour dessiner des formes.</p>
+<nav><a href="#definition">Découvrir LOGO</a><a href="#tortue">La tortue</a><a href="#commandes">Commandes</a><a href="#programmes">Programmes</a><a href="#exercices">Exercices</a></nav>
+
+<section id="definition">
+<h2>1. Qu’est-ce que le langage LOGO ?</h2>
+<p><strong>LOGO</strong> est un langage de programmation éducatif. Il permet de donner des instructions à une petite tortue qui se déplace sur l’écran et dessine des formes géométriques.</p>
+<div class="grid">
+<div class="card"><span class="emoji">🐢</span><h3>La tortue</h3><p>Elle exécute les commandes données par le programmeur.</p></div>
+<div class="card"><span class="emoji">⌨️</span><h3>Les instructions</h3><p>Ce sont les commandes qui indiquent à la tortue comment se déplacer ou tourner.</p></div>
+<div class="card"><span class="emoji">📐</span><h3>Le dessin</h3><p>En combinant plusieurs commandes, on peut dessiner un carré, un rectangle ou un triangle.</p></div>
+</div>
+<div class="callout green"><strong>Idée essentielle :</strong> un programme est une suite d’instructions écrites dans un ordre précis. La tortue les exécute l’une après l’autre.</div>
 </section>
-<section class="card">
-<h2>Leçon 2 : Les instructions de base</h2>
-<ul>
-<li>AV 100 : avancer de 100 unités.</li>
-<li>RE 50 : reculer de 50 unités.</li>
-<li>TD 90 : tourner à droite de 90 degrés.</li>
-<li>TG 90 : tourner à gauche de 90 degrés.</li>
-</ul>
-<p>Les abréviations exactes peuvent varier selon la version de LOGO utilisée.</p>
+
+<section id="tortue">
+<h2>2. Comprendre les déplacements de la tortue</h2>
+<p>La tortue possède une position et une direction. Elle peut avancer, reculer et tourner à droite ou à gauche.</p>
+<div class="diagram">
+  <svg viewBox="0 0 320 160" width="100%" style="max-width:420px" role="img" aria-label="La tortue avance, tourne à droite et à gauche">
+    <defs><marker id="arr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#1457a6"/></marker></defs>
+    <path d="M45 100 L135 100" stroke="#1457a6" stroke-width="3" marker-end="url(#arr)" fill="none"/>
+    <path d="M145 100 A35 35 0 0 1 180 65" stroke="#16845b" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+    <path d="M180 55 L180 20" stroke="#a95608" stroke-width="3" marker-end="url(#arr)"/>
+    <text x="65" y="87" font-size="12" fill="#1457a6">AVANCE</text>
+    <text x="190" y="82" font-size="12" fill="#16845b">TOURNE</text>
+    <text x="190" y="29" font-size="12" fill="#a95608">NOUVELLE</text><text x="190" y="42" font-size="12" fill="#a95608">DIRECTION</text>
+    <text x="25" y="135" font-size="12" fill="#52657c">Déplacement de la tortue</text>
+  </svg>
+</div>
+<p><strong>Attention :</strong> la commande de rotation change la direction de la tortue, mais ne la fait pas avancer.</p>
 </section>
-<section class="card">
-<h2>Leçon 3 : Dessiner un carré</h2>
-<pre>REPETE 4 [AV 100 TD 90]</pre>
-<p>La répétition exécute quatre fois les instructions pour former un carré.</p>
+
+<section id="commandes">
+<h2>3. Les commandes essentielles</h2>
+<p>Dans de nombreuses versions scolaires de LOGO, les commandes suivantes sont utilisées. Les noms peuvent varier légèrement selon le logiciel.</p>
+<table><thead><tr><th>Commande</th><th>Signification</th><th>Exemple</th></tr></thead><tbody>
+<tr><td><code>AV 50</code> ou <code>AVANCE 50</code></td><td>Avancer de 50 pas.</td><td>La tortue avance.</td></tr>
+<tr><td><code>RE 30</code> ou <code>RECULE 30</code></td><td>Reculer de 30 pas.</td><td>La tortue recule.</td></tr>
+<tr><td><code>TD 90</code> ou <code>DROITE 90</code></td><td>Tourner à droite de 90 degrés.</td><td>La direction change.</td></tr>
+<tr><td><code> TG 90</code> ou <code>GAUCHE 90</code></td><td>Tourner à gauche de 90 degrés.</td><td>La direction change.</td></tr>
+<tr><td><code>LC</code> / <code>LEVECRAYON</code></td><td>Lever le crayon : la tortue avance sans tracer.</td><td>Pas de ligne dessinée.</td></tr>
+<tr><td><code>BC</code> / <code>BAISSECRAYON</code></td><td>Baisser le crayon : la tortue trace en avançant.</td><td>Une ligne apparaît.</td></tr>
+<tr><td><code>VE</code> / <code>EFFACE</code></td><td>Effacer le dessin ou nettoyer l’écran selon le logiciel.</td><td>Écran propre.</td></tr>
+</tbody></table>
+<div class="callout orange"><strong>Important :</strong> respecte la syntaxe de la version de LOGO utilisée en classe. Par exemple, certains logiciels utilisent <code>AV</code> et <code>TD</code>, tandis que d’autres acceptent les mots complets.</div>
 </section>
-<section class="card">
-<h2>Exercice interactif</h2>
-<p>Combien de côtés possède un carré ?</p>
-<label><input type="radio" name="q" value="0"> Trois</label>
-<label><input type="radio" name="q" value="1"> Quatre</label>
-<label><input type="radio" name="q" value="0"> Cinq</label>
-<button onclick="corriger()">Vérifier</button>
-<p id="resultat" aria-live="polite"></p>
+
+<section id="programmes">
+<h2>4. Écrire un programme simple</h2>
+<h3>Exemple 1 : tracer une ligne de 100 pas</h3>
+<div class="codebox">AV 100</div>
+<p>Résultat : la tortue avance de 100 pas en traçant une ligne si le crayon est baissé.</p>
+<h3>Exemple 2 : tracer un carré</h3>
+<p>Un carré possède <strong>4 côtés égaux</strong> et <strong>4 angles droits de 90°</strong>. On répète donc quatre fois l’action « avancer puis tourner à droite de 90° ».</p>
+<div class="codebox">AV 80
+TD 90
+AV 80
+TD 90
+AV 80
+TD 90
+AV 80
+TD 90</div>
+<div class="callout green"><strong>À comprendre :</strong> chaque commande <code>AV 80</code> trace un côté. Chaque commande <code>TD 90</code> prépare la direction du côté suivant.</div>
+<h3>Exemple 3 : tracer un rectangle</h3>
+<p>Un rectangle a deux côtés longs égaux et deux côtés courts égaux. Exemple : longueur 120 pas et largeur 60 pas.</p>
+<div class="codebox">AV 120
+TD 90
+AV 60
+TD 90
+AV 120
+TD 90
+AV 60
+TD 90</div>
+<h3>Exemple 4 : répéter des instructions</h3>
+<p>Certains logiciels LOGO permettent d’utiliser une boucle <code>REPETE</code> pour éviter de réécrire les mêmes commandes. Une syntaxe fréquente est :</p>
+<div class="codebox">REPETE 4 [AV 80 TD 90]</div>
+<p>Cette instruction signifie : répéter quatre fois « avancer de 80 pas, puis tourner à droite de 90° ». Elle dessine un carré.</p>
+<div class="callout orange">La syntaxe exacte des boucles dépend du logiciel étudié. Si votre professeur utilise une autre écriture, appliquez celle du cours.</div>
 </section>
+
+<section>
+<h2>5. Essayer un petit programme</h2>
+<p>Choisis une figure pour voir le programme LOGO correspondant et une représentation du dessin.</p>
+<div class="canvasbox">
+<div class="controls"><label for="figure"><strong>Figure :</strong></label><select id="figure" onchange="dessiner()"><option value="carre">Carré</option><option value="rectangle">Rectangle</option><option value="triangle">Triangle équilatéral</option></select></div>
+<canvas id="dessin" width="440" height="260" aria-label="Aperçu du dessin de la tortue"></canvas>
+<div id="programme" class="codebox" style="text-align:left;margin-top:12px">REPETE 4 [AV 80 TD 90]</div>
+</div>
+</section>
+
+<section>
+<h2>6. Méthode pour résoudre un exercice LOGO</h2>
+<ol class="steps"><li>Lire attentivement la consigne et identifier la figure à tracer.</li><li>Compter le nombre de côtés et repérer leurs longueurs.</li><li>Choisir les commandes de déplacement et de rotation.</li><li>Écrire les instructions dans le bon ordre.</li><li>Exécuter le programme et vérifier le résultat.</li><li>Corriger les erreurs si le dessin n’est pas correct.</li></ol>
+</section>
+
+<section>
+<h2>7. Résumé à mémoriser</h2>
+<div class="callout green">LOGO est un langage de programmation éducatif qui commande une tortue. <code>AV</code> fait avancer, <code>RE</code> fait reculer, <code>TD</code> tourne à droite et <code>TG</code> tourne à gauche. Le nombre après une commande de déplacement indique la distance ; le nombre après une commande de rotation indique un angle en degrés. Pour dessiner un carré, on avance quatre fois de la même distance et on tourne quatre fois de 90°.</div>
+</section>
+
+<section id="exercices">
+<h2>8. Exercices d’application</h2>
+<p>Choisis les bonnes réponses puis clique sur « Corriger mes réponses ».</p>
+<form id="quiz">
+<div class="exercise"><h3>Exercice 1 — QCM</h3>
+<div class="question"><strong>1. LOGO est :</strong><label><input type="radio" name="q1" value="a"> Un langage de programmation éducatif</label><label><input type="radio" name="q1" value="b"> Un type d’imprimante</label></div>
+<div class="question"><strong>2. Que signifie <code>AV 50</code> ?</strong><label><input type="radio" name="q2" value="a"> Tourner de 50 degrés</label><label><input type="radio" name="q2" value="b"> Avancer de 50 pas</label></div>
+<div class="question"><strong>3. Que fait <code>TD 90</code> ?</strong><label><input type="radio" name="q3" value="a"> Tourner à droite de 90°</label><label><input type="radio" name="q3" value="b"> Avancer de 90 pas</label></div>
+<div class="question"><strong>4. Combien de côtés possède un carré ?</strong><label><input type="radio" name="q4" value="a"> 3</label><label><input type="radio" name="q4" value="b"> 4</label><label><input type="radio" name="q4" value="c"> 5</label></div>
+</div>
+<div class="exercise"><h3>Exercice 2 — Comprendre un programme</h3>
+<p>Observe le programme :</p><div class="codebox">AV 60
+TD 90
+AV 60</div>
+<div class="question"><strong>1. Combien de déplacements vers l’avant sont demandés ?</strong><label><input type="radio" name="q5" value="a"> Un</label><label><input type="radio" name="q5" value="b"> Deux</label><label><input type="radio" name="q5" value="c"> Trois</label></div>
+<div class="question"><strong>2. Que fait la commande <code>TD 90</code> entre les deux déplacements ?</strong><label><input type="radio" name="q6" value="a"> Elle tourne à droite de 90°</label><label><input type="radio" name="q6" value="b"> Elle efface le dessin</label></div>
+</div>
+<div class="exercise"><h3>Exercice 3 — Vrai ou faux</h3>
+<div class="question"><strong>1. Un carré possède quatre côtés égaux.</strong><label><input type="radio" name="q7" value="v"> Vrai</label><label><input type="radio" name="q7" value="f"> Faux</label></div>
+<div class="question"><strong>2. <code>TG 90</code> signifie tourner à gauche de 90°.</strong><label><input type="radio" name="q8" value="v"> Vrai</label><label><input type="radio" name="q8" value="f"> Faux</label></div>
+<div class="question"><strong>3. Dans <code>AV 80</code>, le nombre 80 indique un angle.</strong><label><input type="radio" name="q9" value="v"> Vrai</label><label><input type="radio" name="q9" value="f"> Faux</label></div>
+<div class="question"><strong>4. <code>REPETE 4 [AV 80 TD 90]</code> peut tracer un carré dans les versions qui acceptent cette syntaxe.</strong><label><input type="radio" name="q10" value="v"> Vrai</label><label><input type="radio" name="q10" value="f"> Faux</label></div>
+</div>
+<button type="button" onclick="corriger()">Corriger mes réponses</button><button type="reset" class="secondary" onclick="resetQuiz()">Recommencer</button>
+<div class="result" id="resultat" aria-live="polite"></div>
+<div class="answers" id="correction"><strong>Correction :</strong><ol><li>Un langage de programmation éducatif.</li><li>Avancer de 50 pas.</li><li>Tourner à droite de 90°.</li><li>4 côtés.</li><li>Deux déplacements vers l’avant.</li><li>Elle tourne à droite de 90°.</li><li>Vrai.</li><li>Vrai.</li><li>Faux : 80 indique la distance de déplacement.</li><li>Vrai, si le logiciel accepte cette syntaxe.</li></ol></div>
+</form>
+</section>
+<footer>IDTech • Unité 4 — Programmation LOGO • Informatique 2AC</footer>
 </main>
 <script>
-function corriger(){
-let r=document.querySelector('input[name="q"]:checked');
-document.getElementById('resultat').textContent=
-!r?'Choisis une réponse.':
-r.value==='1'?'✅ Bonne réponse !':'❌ Réessaie.';
-}
+function dessiner(){const c=document.getElementById('dessin'),ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);ctx.strokeStyle='#1457a6';ctx.lineWidth=4;ctx.lineJoin='round';ctx.beginPath();let type=document.getElementById('figure').value;let pts;if(type==='carre'){pts=[[150,55],[290,55],[290,195],[150,195],[150,55]];document.getElementById('programme').textContent='REPETE 4 [AV 80 TD 90]'}else if(type==='rectangle'){pts=[[100,75],[340,75],[340,185],[100,185],[100,75]];document.getElementById('programme').textContent='AV 120\\nTD 90\\nAV 60\\nTD 90\\nAV 120\\nTD 90\\nAV 60\\nTD 90'}else{pts=[[220,45],[335,205],[105,205],[220,45]];document.getElementById('programme').textContent='REPETE 3 [AV 100 TD 120]'}ctx.moveTo(pts[0][0],pts[0][1]);for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.stroke();ctx.fillStyle='#16845b';ctx.beginPath();ctx.arc(pts[0][0],pts[0][1],6,0,Math.PI*2);ctx.fill();ctx.fillStyle='#52657c';ctx.font='13px Arial';ctx.fillText('Départ de la tortue',10,245)}
+function corriger(){const key={q1:'a',q2:'b',q3:'a',q4:'b',q5:'b',q6:'a',q7:'v',q8:'v',q9:'f',q10:'v'};let score=0,missing=0;for(const [q,a] of Object.entries(key)){const x=document.querySelector('input[name="'+q+'"]:checked');if(!x)missing++;else if(x.value===a)score++;}document.getElementById('resultat').textContent='Votre score : '+score+'/10'+(missing?' — Questions sans réponse : '+missing:'');document.getElementById('correction').classList.add('show')}
+function resetQuiz(){document.getElementById('resultat').textContent='';document.getElementById('correction').classList.remove('show')}
+dessiner();
 </script>
 </body>
 </html>
