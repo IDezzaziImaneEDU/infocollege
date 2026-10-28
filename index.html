@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#172554">
-  <meta name="description" content="EduTech Informatique 2AC : cours, activités et ressources pédagogiques avec la professeure Imane Dezzazi.">
-  <title>EduTech | Informatique 2AC</title>
+  <meta name="description" content="IDTech Informatique 2AC : cours, activités et ressources pédagogiques avec la professeure Imane Dezzazi.">
+  <title>IDTech | Informatique 2AC</title>
   <style>
     :root {
       --navy: #10234f;
@@ -114,7 +114,12 @@
     .unit-top { display: flex; align-items: center; gap: 12px; }
     .unit-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 16px; background: var(--tint); color: var(--accent); font-size: 27px; }
     .unit-number { color: var(--accent); background: var(--tint); padding: 5px 10px; border-radius: 999px; font-size: 11px; font-weight: 850; }
-    .unit-card h3 { margin: 19px 0 7px; font-size: 19px; line-height: 1.25; }
+
+    .unit-photo {
+      display: block; width: 100%; height: 125px; object-fit: contain;
+      margin: 16px 0 5px; border-radius: 12px; background: #f8fafc;
+    }
+    .unit-card h3 { margin: 12px 0 7px; font-size: 19px; line-height: 1.25; }
     .unit-card p { margin: 0 0 20px; color: var(--muted); font-size: 14px; flex: 1; }
     .unit-link { display: flex; justify-content: center; align-items: center; gap: 8px; padding: 11px 13px; color: white; background: var(--accent); text-decoration: none; border-radius: 11px; font-size: 13px; font-weight: 800; }
     .unit-link:hover { filter: brightness(.92); }
@@ -191,9 +196,9 @@
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#accueil" aria-label="EduTech, accueil">
+      <a class="brand" href="#accueil" aria-label="IDTech, accueil">
         <span class="brand-mark" aria-hidden="true">🎓</span>
-        <span><span class="brand-name">Edu<span>Tech</span></span><span class="brand-sub">INFORMATIQUE 2AC</span></span>
+        <span><span class="brand-name">ID<span>Tech</span></span><span class="brand-sub">INFORMATIQUE 2AC</span></span>
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
       <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
@@ -249,24 +254,28 @@
         <div class="unit-grid">
           <article class="unit-card">
             <div class="unit-top"><div class="unit-icon" aria-hidden="true">💻</div><span class="unit-number">UNITÉ 01</span></div>
+            <img class="unit-photo" src="images/unite1-materiel.jpg" alt="Ordinateur et périphériques" loading="lazy" onerror="this.style.display='none'">
             <h3>Environnement matériel</h3>
             <p>Découvrez les composants de l’ordinateur, les périphériques, la mémoire et les connecteurs.</p>
             <a class="unit-link" href="unite1.html">Voir le contenu <span aria-hidden="true">→</span></a>
           </article>
           <article class="unit-card purple">
             <div class="unit-top"><div class="unit-icon" aria-hidden="true">🌐</div><span class="unit-number">UNITÉ 02</span></div>
+            <img class="unit-photo" src="images/unite2-reseau.jpg" alt="Équipements d’un réseau local" loading="lazy" onerror="this.style.display='none'">
             <h3>Réseau local</h3>
             <p>Comprenez l’échange d’informations et les équipements réseau pour partager et communiquer.</p>
             <a class="unit-link" href="unite2.html">Voir le contenu <span aria-hidden="true">→</span></a>
           </article>
           <article class="unit-card green">
             <div class="unit-top"><div class="unit-icon" aria-hidden="true">📊</div><span class="unit-number">UNITÉ 03</span></div>
+            <img class="unit-photo" src="images/unite3-excel.jpg" alt="Tableur et graphique" loading="lazy" onerror="this.style.display='none'">
             <h3>Tableur Excel</h3>
             <p>Apprenez à créer des tableaux, utiliser des formules et effectuer des calculs.</p>
             <a class="unit-link" href="unite3.html">Voir le contenu <span aria-hidden="true">→</span></a>
           </article>
           <article class="unit-card orange">
             <div class="unit-top"><div class="unit-icon" aria-hidden="true">🐢</div><span class="unit-number">UNITÉ 04</span></div>
+            <img class="unit-photo" src="images/unite4-logo.jpg" alt="Dessin géométrique avec LOGO" loading="lazy" onerror="this.style.display='none'">
             <h3>Programmation LOGO</h3>
             <p>Explorez les instructions, les déplacements et la création de dessins géométriques.</p>
             <a class="unit-link" href="unite4.html">Voir le contenu <span aria-hidden="true">→</span></a>
@@ -285,7 +294,7 @@
         </div>
         <div class="help-banner">
           <div><h2>Une question ? Un besoin d’aide ?</h2><p>La professeure est là pour vous accompagner dans votre apprentissage.</p></div>
-          <a class="btn" href="mailto:iddezzazima@gmail.com?subject=Question%20sur%20EduTech%20Informatique%202AC">✉ Contacter la professeure →</a>
+          <a class="btn" href="mailto:iddezzazima@gmail.com?subject=Question%20sur%20IDTech%20Informatique%202AC">✉ Contacter la professeure →</a>
         </div>
       </div>
     </section>
@@ -296,7 +305,7 @@
         <div>
           <span class="kicker" style="color:var(--purple);font-weight:850;letter-spacing:1.5px;font-size:12px">À PROPOS DE LA PLATEFORME</span>
           <h2>Apprendre l’informatique autrement</h2>
-          <p>EduTech est un espace pédagogique destiné aux élèves de 2ème année du collège. Il rassemble les unités d’apprentissage et facilite l’accès aux ressources numériques.</p>
+          <p>IDTech est un espace pédagogique destiné aux élèves de 2ème année du collège. Il rassemble les unités d’apprentissage et facilite l’accès aux ressources numériques.</p>
           <p><strong>Professeure :</strong> Imane Dezzazi</p>
           <a class="btn btn-primary" href="mailto:iddezzazima@gmail.com">Envoyer un e-mail</a>
         </div>
@@ -309,7 +318,7 @@
       <div class="footer-main">
         <a class="brand" href="#accueil">
           <span class="brand-mark" aria-hidden="true">🎓</span>
-          <span><span class="brand-name" style="color:white">Edu<span>Tech</span></span><span class="brand-sub">INFORMATIQUE 2AC</span></span>
+          <span><span class="brand-name" style="color:white">ID<span>Tech</span></span><span class="brand-sub">INFORMATIQUE 2AC</span></span>
         </a>
         <div>
           <strong>Professeure Imane Dezzazi</strong><br>
@@ -318,7 +327,7 @@
         <a class="footer-contact" href="mailto:iddezzazima@gmail.com">✉ <span>iddezzazima@gmail.com</span></a>
       </div>
       <div class="footer-bottom">
-        <span>© <span id="year"></span> EduTech — Tous droits réservés.</span>
+        <span>© <span id="year"></span> IDTech — Tous droits réservés.</span>
         <a href="#accueil" style="color:#dbeafe;text-decoration:none">Retour en haut ↑</a>
       </div>
     </div>
